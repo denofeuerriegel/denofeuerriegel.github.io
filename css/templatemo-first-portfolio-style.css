@@ -12,13 +12,13 @@ https://templatemo.com/tm-578-first-portfolio
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #535da1;
-  --secondary-color:              #14B789;
+  --primary-color:                #a32e00;
+  --secondary-color:              #001761;
   --section-bg-color:             #f9f9f9;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
-  --featured-border-color:        #727aab;
+  --featured-border-color:        #daa023;
 
   --body-font-family:             'DM Sans', sans-serif;
 
@@ -227,6 +227,8 @@ strong {
   height: 47px;
   line-height: 47px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .is-sticky .navbar-icon {
@@ -516,6 +518,11 @@ strong {
   left: 0;
   margin: auto;
   pointer-events: none;
+}
+
+.small-image {
+  width: 200px; /* Bild auf 200px Breite setzen */
+  height: auto; /* Höhe automatisch anpassen, um Verzerrung zu vermeiden */
 }
 
 .hero-image {
