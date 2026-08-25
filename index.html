@@ -11,16 +11,9 @@
 
     <title>Deno Feuerriegel | Systems Integration</title>
 
-    <!-- Devicon -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    >
-
     <style>
-
         /* ========================================
-           LIGHT THEME – DEFAULT
+           THEME
         ======================================== */
 
         :root {
@@ -30,12 +23,8 @@
             --muted: #6f7470;
             --border: #dadcd8;
             --accent: #557462;
+            --icon-bg: #eef0ec;
         }
-
-
-        /* ========================================
-           SYSTEM DARK MODE
-        ======================================== */
 
         @media (prefers-color-scheme: dark) {
             :root {
@@ -45,13 +34,9 @@
                 --muted: #a4a8a4;
                 --border: #373b38;
                 --accent: #9eb5a6;
+                --icon-bg: #292d2a;
             }
         }
-
-
-        /* ========================================
-           MANUAL THEME OVERRIDE
-        ======================================== */
 
         html.light {
             --bg: #f7f7f5;
@@ -60,6 +45,7 @@
             --muted: #6f7470;
             --border: #dadcd8;
             --accent: #557462;
+            --icon-bg: #eef0ec;
         }
 
         html.dark {
@@ -69,11 +55,12 @@
             --muted: #a4a8a4;
             --border: #373b38;
             --accent: #9eb5a6;
+            --icon-bg: #292d2a;
         }
 
 
         /* ========================================
-           RESET
+           BASE
         ======================================== */
 
         * {
@@ -101,8 +88,8 @@
             line-height: 1.55;
 
             transition:
-                background-color 0.2s ease,
-                color 0.2s ease;
+                background-color .2s ease,
+                color .2s ease;
         }
 
         a {
@@ -116,7 +103,7 @@
 
 
         /* ========================================
-           NAVIGATION
+           NAV
         ======================================== */
 
         nav {
@@ -134,7 +121,7 @@
         }
 
         .brand {
-            font-size: 0.95rem;
+            font-size: .95rem;
             font-weight: 650;
             text-decoration: none;
         }
@@ -146,7 +133,6 @@
 
         .nav-button {
             height: 36px;
-
             padding: 0 12px;
 
             border: 1px solid var(--border);
@@ -155,14 +141,14 @@
             background: var(--surface);
             color: var(--text);
 
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
 
-            gap: 6px;
+            gap: 7px;
 
             font-family: inherit;
-            font-size: 0.8rem;
+            font-size: .8rem;
             font-weight: 500;
 
             text-decoration: none;
@@ -202,24 +188,22 @@
 
             color: var(--accent);
 
-            font-size: 0.78rem;
+            font-size: .78rem;
             font-weight: 600;
 
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: .06em;
         }
 
         h1 {
             max-width: 780px;
-
             margin-bottom: 20px;
 
             font-size: clamp(2.5rem, 6vw, 4.3rem);
 
             font-weight: 550;
-
             line-height: 1.04;
-            letter-spacing: -0.045em;
+            letter-spacing: -.045em;
         }
 
         .hero p {
@@ -242,20 +226,18 @@
 
         .layout {
             display: grid;
-
             grid-template-columns: 150px 1fr;
-
             gap: 30px;
         }
 
         .section-title {
             color: var(--muted);
 
-            font-size: 0.76rem;
+            font-size: .76rem;
             font-weight: 600;
 
             text-transform: uppercase;
-            letter-spacing: 0.07em;
+            letter-spacing: .07em;
         }
 
 
@@ -279,22 +261,21 @@
         .job:last-child {
             padding-bottom: 0;
             margin-bottom: 0;
-
             border-bottom: none;
         }
 
         .date {
-            padding-top: 2px;
+            padding-top: 3px;
 
             color: var(--muted);
 
-            font-size: 0.78rem;
+            font-size: .78rem;
         }
 
         .job-top {
             display: flex;
-
             justify-content: space-between;
+            align-items: center;
 
             gap: 20px;
 
@@ -306,12 +287,30 @@
             font-weight: 600;
         }
 
-        .company {
-            color: var(--accent);
-
-            font-size: 0.83rem;
+        .company-wrap {
+            display: flex;
+            align-items: center;
+            gap: 7px;
 
             white-space: nowrap;
+        }
+
+        .company {
+            color: var(--accent);
+            font-size: .83rem;
+        }
+
+        .company-logos {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .company-logo {
+            width: 21px;
+            height: 21px;
+
+            object-fit: contain;
         }
 
         .job p {
@@ -319,7 +318,7 @@
 
             color: var(--muted);
 
-            font-size: 0.88rem;
+            font-size: .88rem;
         }
 
         .keywords {
@@ -327,24 +326,24 @@
 
             color: var(--muted);
 
-            font-size: 0.76rem;
+            font-size: .76rem;
         }
 
 
         /* ========================================
-           SKILLS / EDUCATION
+           LOWER GRID
         ======================================== */
 
         .two-columns {
             display: grid;
 
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1.25fr .75fr;
 
             gap: 55px;
         }
 
         .group {
-            margin-bottom: 20px;
+            margin-bottom: 21px;
         }
 
         .group:last-child {
@@ -352,46 +351,45 @@
         }
 
         .group h3 {
-            font-size: 0.88rem;
-            font-weight: 600;
-
             margin-bottom: 9px;
+
+            font-size: .88rem;
+            font-weight: 600;
         }
 
 
         /* ========================================
-           TOOL / SOFTWARE ICONS
+           TOOL GRID
         ======================================== */
 
         .tool-list {
             display: flex;
             flex-wrap: wrap;
-
             gap: 7px;
         }
 
         .tool {
-            min-height: 34px;
+            min-height: 37px;
+
+            padding: 5px 10px 5px 6px;
 
             display: inline-flex;
             align-items: center;
 
-            gap: 7px;
+            gap: 8px;
 
-            padding: 5px 9px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
 
             background: var(--surface);
 
-            border: 1px solid var(--border);
-            border-radius: 6px;
-
             color: var(--muted);
 
-            font-size: 0.77rem;
+            font-size: .77rem;
 
             transition:
-                border-color 0.15s ease,
-                transform 0.15s ease;
+                border-color .15s ease,
+                transform .15s ease;
         }
 
         .tool:hover {
@@ -399,67 +397,61 @@
             transform: translateY(-1px);
         }
 
-        .tool i {
-            width: 18px;
-
-            text-align: center;
-
-            font-size: 1.05rem;
-        }
-
 
         /* ========================================
-           ACTUAL SOFTWARE LOGO COLORS
+           UNIFORM ICON TILE
         ======================================== */
 
-        .devicon-python-plain {
-            color: #3776ab;
-        }
+        .tool-icon {
+            width: 25px;
+            height: 25px;
 
-        .devicon-matlab-plain {
-            color: #e16737;
-        }
+            flex: 0 0 25px;
 
-        .devicon-arduino-plain {
-            color: #00878f;
-        }
+            border-radius: 5px;
 
-        .devicon-git-plain {
-            color: #f05032;
-        }
-
-        .devicon-ros-original {
-            color: var(--text);
-        }
-
-
-        /* ========================================
-           GENERIC ENGINEERING ICON
-        ======================================== */
-
-        .tool-symbol {
-            min-width: 20px;
-            height: 20px;
-
-            padding: 0 3px;
+            background: var(--icon-bg);
 
             display: inline-flex;
             align-items: center;
             justify-content: center;
 
-            border: 1px solid var(--border);
-            border-radius: 4px;
-
-            color: var(--accent);
-
-            font-size: 0.58rem;
-            font-weight: 700;
-
-            line-height: 1;
+            overflow: hidden;
         }
 
-        .tool-symbol.wide {
-            min-width: 26px;
+        .tool-icon img {
+            width: 16px;
+            height: 16px;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+        .tool-icon svg {
+            width: 17px;
+            height: 17px;
+
+            stroke: var(--accent);
+            color: var(--accent);
+
+            fill: none;
+
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /*
+            MATLAB uses its actual coloured logo.
+            Slight desaturation keeps the visual style calmer.
+        */
+
+        .tool-icon .matlab-logo {
+            width: 18px;
+            height: 18px;
+
+            filter: saturate(.75);
         }
 
 
@@ -478,14 +470,14 @@
         .degree h3 {
             margin-bottom: 3px;
 
-            font-size: 0.88rem;
+            font-size: .88rem;
             font-weight: 600;
         }
 
         .degree p {
             color: var(--muted);
 
-            font-size: 0.82rem;
+            font-size: .82rem;
         }
 
 
@@ -500,7 +492,7 @@
 
             color: var(--muted);
 
-            font-size: 0.76rem;
+            font-size: .76rem;
         }
 
 
@@ -533,13 +525,7 @@
             }
 
             .job-top {
-                display: block;
-            }
-
-            .company {
-                display: block;
-
-                margin-top: 3px;
+                align-items: flex-start;
             }
 
             .two-columns {
@@ -551,11 +537,10 @@
                 display: none;
             }
 
-            .tool {
-                font-size: 0.75rem;
+            .company-wrap {
+                margin-left: 10px;
             }
         }
-
     </style>
 </head>
 
@@ -563,164 +548,159 @@
 <body>
 
 
-    <!-- ========================================
-         NAVIGATION
-    ========================================= -->
+<!-- ========================================
+     NAVIGATION
+========================================= -->
 
-    <nav>
+<nav>
 
-        <div class="container nav-inner">
+    <div class="container nav-inner">
 
-            <a href="#" class="brand">
-                Deno Feuerriegel
+        <a href="#" class="brand">
+            Deno Feuerriegel
+        </a>
+
+
+        <div class="nav-actions">
+
+            <!-- LINKEDIN -->
+
+            <a
+                class="nav-button"
+                href="https://www.linkedin.com/in/deno-feuerriegel"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                >
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V8.98H7.1v11.47z"/>
+                </svg>
+
+                <span class="nav-text">
+                    LinkedIn
+                </span>
+
             </a>
 
 
-            <div class="nav-actions">
+            <!-- MAIL -->
 
+            <a
+                class="nav-button"
+                href="mailto:deno.feuerriegel@gmail.com"
+            >
 
-                <!-- LINKEDIN -->
-
-                <a
-                    class="nav-button"
-                    href="https://www.linkedin.com/in/deno-feuerriegel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
                 >
+                    <rect
+                        x="3"
+                        y="5"
+                        width="18"
+                        height="14"
+                        rx="2"
+                    />
 
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V8.98H7.1v11.47z"/>
-                    </svg>
+                    <path d="M3 7l9 6 9-6"/>
+                </svg>
 
-                    <span class="nav-text">
-                        LinkedIn
-                    </span>
+                <span class="nav-text">
+                    Mail
+                </span>
 
-                </a>
-
-
-                <!-- MAIL -->
-
-                <a
-                    class="nav-button"
-                    href="mailto:deno.feuerriegel@gmail.com"
-                    aria-label="Email"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-
-                        <rect
-                            x="3"
-                            y="5"
-                            width="18"
-                            height="14"
-                            rx="2"
-                        ></rect>
-
-                        <path d="M3 7l9 6 9-6"></path>
-
-                    </svg>
-
-                    <span class="nav-text">
-                        Mail
-                    </span>
-
-                </a>
+            </a>
 
 
-                <!-- THEME -->
+            <!-- THEME -->
 
-                <button
-                    class="nav-button"
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Toggle light and dark mode"
-                >
-                    ◐
-                </button>
-
-            </div>
+            <button
+                class="nav-button"
+                id="theme-toggle"
+                type="button"
+                aria-label="Toggle light and dark mode"
+            >
+                ◐
+            </button>
 
         </div>
 
-    </nav>
+    </div>
+
+</nav>
 
 
 
-    <!-- ========================================
-         HERO
-    ========================================= -->
+<!-- ========================================
+     HERO
+========================================= -->
 
-    <header>
+<header>
 
-        <div class="container hero">
+    <div class="container hero">
 
-            <div class="label">
-                Mechanical Engineering · Systems Integration
-            </div>
-
-            <h1>
-                Systems Integration
-                & Mechatronic Development
-            </h1>
-
-            <p>
-                Mechanical engineer and M.Sc. candidate with experience
-                in vehicle software validation, HIL testing, automotive
-                diagnostics and multidisciplinary hardware-software
-                integration.
-            </p>
-
+        <div class="label">
+            Mechanical Engineering · Systems Integration
         </div>
 
-    </header>
+        <h1>
+            Systems Integration
+            & Mechatronic Development
+        </h1>
+
+        <p>
+            Mechanical engineer and M.Sc. candidate with experience
+            in vehicle software validation, HIL testing, automotive
+            diagnostics and multidisciplinary hardware-software
+            integration.
+        </p>
+
+    </div>
+
+</header>
 
 
 
-    <!-- ========================================
-         EXPERIENCE
-    ========================================= -->
+<!-- ========================================
+     EXPERIENCE
+========================================= -->
 
-    <section>
+<section>
 
-        <div class="container layout">
+    <div class="container layout">
 
-            <div class="section-title">
-                Experience
-            </div>
-
-
-            <div>
+        <div class="section-title">
+            Experience
+        </div>
 
 
-                <!-- UAV -->
-
-                <div class="job">
-
-                    <div class="date">
-                        2025 — Present
-                    </div>
+        <div>
 
 
-                    <div>
+            <!-- UAV -->
 
-                        <div class="job-top">
+            <div class="job">
 
-                            <h3>
-                                Product Development / UAV Systems
-                            </h3>
+                <div class="date">
+                    2025 — Present
+                </div>
+
+
+                <div>
+
+                    <div class="job-top">
+
+                        <h3>
+                            Product Development / UAV Systems
+                        </h3>
+
+                        <div class="company-wrap">
 
                             <span class="company">
                                 Projassment
@@ -728,485 +708,176 @@
 
                         </div>
 
-                        <p>
-                            Development of an unmanned system from concept
-                            to functional prototype, integrating mechanics,
-                            electronics, sensors, propulsion, communication
-                            and autopilot software.
-                        </p>
+                    </div>
 
-                        <div class="keywords">
-                            System Integration · PCB Development ·
-                            Sensors · Prototype Bring-Up
-                        </div>
+                    <p>
+                        Development of an unmanned system from concept
+                        to functional prototype, integrating mechanics,
+                        electronics, sensors, propulsion, communication
+                        and autopilot software.
+                    </p>
 
+                    <div class="keywords">
+                        System Integration · PCB Development ·
+                        Sensors · Prototype Bring-Up
                     </div>
 
                 </div>
 
+            </div>
 
 
-                <!-- VW -->
 
-                <div class="job">
+            <!-- VOLKSWAGEN -->
 
-                    <div class="date">
-                        2024 — 2025
-                    </div>
+            <div class="job">
+
+                <div class="date">
+                    2024 — 2025
+                </div>
 
 
-                    <div>
+                <div>
 
-                        <div class="job-top">
+                    <div class="job-top">
 
-                            <h3>
-                                Powertrain Software Development
-                            </h3>
+                        <h3>
+                            Powertrain Software Development
+                        </h3>
+
+
+                        <div class="company-wrap">
 
                             <span class="company">
                                 Volkswagen AG
                             </span>
 
+
+                            <div class="company-logos">
+
+                                <img
+                                    class="company-logo"
+                                    src="https://cdn.simpleicons.org/volkswagen/557462/9eb5a6"
+                                    alt="Volkswagen"
+                                >
+
+                            </div>
+
                         </div>
 
-                        <p>
-                            Vehicle software validation and calibration,
-                            ECU and sensor signal analysis, HIL testing
-                            and development of an automated software
-                            commissioning workflow.
-                        </p>
+                    </div>
 
-                        <div class="keywords">
-                            HIL · ETAS · DiagRA · Test Automation ·
-                            Root-Cause Analysis
-                        </div>
+                    <p>
+                        Vehicle software validation and calibration,
+                        ECU and sensor signal analysis, HIL testing
+                        and development of an automated software
+                        commissioning workflow.
+                    </p>
 
+                    <div class="keywords">
+                        HIL · ETAS · DiagRA · Test Automation ·
+                        Root-Cause Analysis
                     </div>
 
                 </div>
 
+            </div>
 
 
-                <!-- COTEC -->
 
-                <div class="job">
+            <!-- COTEC -->
 
-                    <div class="date">
-                        2021 — 2024
+            <div class="job">
+
+                <div class="date">
+                    2021 — 2024
+                </div>
+
+
+                <div>
+
+                    <div class="job-top">
+
+                        <h3>
+                            Vehicle Testing / ADAS Validation
+                        </h3>
+
+                        <span class="company">
+                            CoTec
+                        </span>
+
                     </div>
 
+                    <p>
+                        Real-world validation and evaluation of
+                        driver assistance systems and identification
+                        of functional anomalies.
+                    </p>
 
-                    <div>
-
-                        <div class="job-top">
-
-                            <h3>
-                                Vehicle Testing / ADAS Validation
-                            </h3>
-
-                            <span class="company">
-                                CoTec
-                            </span>
-
-                        </div>
-
-                        <p>
-                            Real-world validation and evaluation of
-                            driver assistance systems and identification
-                            of functional anomalies.
-                        </p>
-
-                        <div class="keywords">
-                            Vehicle Testing · ADAS · Validation
-                        </div>
-
+                    <div class="keywords">
+                        Vehicle Testing · ADAS · Validation
                     </div>
 
                 </div>
 
+            </div>
 
 
-                <!-- KFZ -->
 
-                <div class="job">
+            <!-- KFZ -->
 
-                    <div class="date">
-                        2017 — 2021
-                    </div>
+            <div class="job">
+
+                <div class="date">
+                    2017 — 2021
+                </div>
 
 
-                    <div>
+                <div>
 
-                        <div class="job-top">
+                    <div class="job-top">
 
-                            <h3>
-                                Automotive Mechatronics Technician
-                            </h3>
+                        <h3>
+                            Automotive Mechatronics Technician
+                        </h3>
+
+
+                        <div class="company-wrap">
 
                             <span class="company">
                                 Kuhn + Witte
                             </span>
 
-                        </div>
 
-                        <p>
-                            Practical foundation in mechanical,
-                            electrical and electronic vehicle systems,
-                            diagnostics and troubleshooting.
-                        </p>
+                            <div class="company-logos">
 
-                        <div class="keywords">
-                            Diagnostics · CAN / LIN · Vehicle E/E
-                        </div>
+                                <img
+                                    class="company-logo"
+                                    src="https://cdn.simpleicons.org/volkswagen/557462/9eb5a6"
+                                    alt="Volkswagen"
+                                >
 
-                    </div>
+                                <img
+                                    class="company-logo"
+                                    src="https://cdn.simpleicons.org/audi/557462/9eb5a6"
+                                    alt="Audi"
+                                >
 
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         SKILLS + EDUCATION
-    ========================================= -->
-
-    <section>
-
-        <div class="container two-columns">
-
-
-            <!-- ===================================
-                 TECHNICAL SKILLS
-            ==================================== -->
-
-            <div>
-
-                <div
-                    class="section-title"
-                    style="margin-bottom: 20px;"
-                >
-                    Technical Skills
-                </div>
-
-
-
-                <!-- SOFTWARE -->
-
-                <div class="group">
-
-                    <h3>
-                        Software & Programming
-                    </h3>
-
-                    <div class="tool-list">
-
-
-                        <div class="tool">
-                            <i class="devicon-python-plain"></i>
-                            Python
-                        </div>
-
-
-                        <div class="tool">
-                            <i class="devicon-matlab-plain"></i>
-                            MATLAB
-                        </div>
-
-
-                        <div class="tool">
-                            <i class="devicon-git-plain"></i>
-                            Git
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                ST
-                            </span>
-
-                            Structured Text
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                PLC
-                            </span>
-
-                            PLC
+                            </div>
 
                         </div>
 
                     </div>
-
-                </div>
-
-
-
-                <!-- EMBEDDED -->
-
-                <div class="group">
-
-                    <h3>
-                        Embedded & Electronics
-                    </h3>
-
-                    <div class="tool-list">
-
-
-                        <div class="tool">
-                            <i class="devicon-arduino-plain"></i>
-                            Arduino
-                        </div>
-
-
-                        <div class="tool">
-                            <i class="devicon-ros-original"></i>
-                            ROS
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                PCB
-                            </span>
-
-                            KiCad
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                ∿
-                            </span>
-
-                            LTspice
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- VEHICLE -->
-
-                <div class="group">
-
-                    <h3>
-                        Vehicle & Validation
-                    </h3>
-
-                    <div class="tool-list">
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                HIL
-                            </span>
-
-                            Hardware-in-the-Loop
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                E
-                            </span>
-
-                            ETAS
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                D
-                            </span>
-
-                            DiagRA
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                CAN
-                            </span>
-
-                            CAN
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                LIN
-                            </span>
-
-                            LIN
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CAD -->
-
-                <div class="group">
-
-                    <h3>
-                        CAD & Engineering
-                    </h3>
-
-                    <div class="tool-list">
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                C
-                            </span>
-
-                            PTC Creo
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol">
-                                F
-                            </span>
-
-                            Fusion
-
-                        </div>
-
-
-                        <div class="tool">
-
-                            <span class="tool-symbol wide">
-                                FEM
-                            </span>
-
-                            ADINA
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ===================================
-                 EDUCATION
-            ==================================== -->
-
-            <div>
-
-                <div
-                    class="section-title"
-                    style="margin-bottom: 20px;"
-                >
-                    Education
-                </div>
-
-
-                <div class="degree">
-
-                    <h3>
-                        M.Sc. Sustainable Energy Systems
-                    </h3>
 
                     <p>
-                        HAW Hamburg · 2025–2026
-                        <br>
-                        Expected graduation December 2026
+                        Practical foundation in mechanical,
+                        electrical and electronic vehicle systems,
+                        diagnostics and troubleshooting.
                     </p>
 
-                </div>
-
-
-                <div class="degree">
-
-                    <h3>
-                        B.Sc. Mechanical Engineering
-                    </h3>
-
-                    <p>
-                        Digital Engineering & Mobility · HAW Hamburg
-                        <br>
-                        Final grade: 1.5
-                    </p>
-
-                </div>
-
-
-                <div class="degree">
-
-                    <h3>
-                        Automotive Mechatronics
-                    </h3>
-
-                    <p>
-                        Vocational Training · 2017–2021
-                    </p>
-
-                </div>
-
-
-                <div
-                    style="
-                        margin-top: 32px;
-                        padding-top: 20px;
-                        border-top: 1px solid var(--border);
-                    "
-                >
-
-                    <div
-                        class="section-title"
-                        style="margin-bottom: 12px;"
-                    >
-                        Focus
+                    <div class="keywords">
+                        Diagnostics · CAN / LIN · Vehicle E/E
                     </div>
-
-                    <p
-                        style="
-                            color: var(--muted);
-                            font-size: 0.84rem;
-                            line-height: 1.65;
-                        "
-                    >
-                        Systems Integration · Embedded Systems ·
-                        Vehicle Software · Test Automation ·
-                        Mechatronic Product Development
-                    </p>
 
                 </div>
 
@@ -1215,110 +886,629 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- ========================================
-         FOOTER
-    ========================================= -->
+<!-- ========================================
+     SKILLS + EDUCATION
+========================================= -->
 
-    <footer>
+<section>
 
-        <div class="container">
-            Deno Feuerriegel · Hamburg · 2026
+    <div class="container two-columns">
+
+
+        <!-- ===================================
+             TECHNICAL SKILLS
+        ==================================== -->
+
+        <div>
+
+            <div
+                class="section-title"
+                style="margin-bottom: 20px;"
+            >
+                Technical Skills
+            </div>
+
+
+
+            <!-- SOFTWARE -->
+
+            <div class="group">
+
+                <h3>
+                    Software & Programming
+                </h3>
+
+
+                <div class="tool-list">
+
+
+                    <!-- PYTHON -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/python/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        Python
+
+                    </div>
+
+
+
+                    <!-- MATLAB -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                class="matlab-logo"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+                                alt=""
+                            >
+
+                        </span>
+
+                        MATLAB
+
+                    </div>
+
+
+
+                    <!-- GIT -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/git/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        Git
+
+                    </div>
+
+
+
+                    <!-- STRUCTURED TEXT -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M6 5h12"/>
+                                <path d="M9 5v14"/>
+                                <path d="M5 10h8"/>
+                                <path d="M5 15h8"/>
+                                <path d="M16 11l3 3-3 3"/>
+
+                            </svg>
+
+                        </span>
+
+                        Structured Text
+
+                    </div>
+
+
+
+                    <!-- PLC -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <rect x="5" y="4" width="14" height="16" rx="2"/>
+                                <circle cx="9" cy="8" r="1"/>
+                                <circle cx="13" cy="8" r="1"/>
+                                <circle cx="17" cy="8" r="1"/>
+                                <path d="M8 13h8"/>
+                                <path d="M8 16h5"/>
+
+                            </svg>
+
+                        </span>
+
+                        PLC
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMBEDDED -->
+
+            <div class="group">
+
+                <h3>
+                    Embedded & Electronics
+                </h3>
+
+
+                <div class="tool-list">
+
+
+                    <!-- ARDUINO -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/arduino/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        Arduino
+
+                    </div>
+
+
+
+                    <!-- ROS -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/ros/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        ROS
+
+                    </div>
+
+
+
+                    <!-- KICAD -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/kicad/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        KiCad
+
+                    </div>
+
+
+
+                    <!-- LTSPICE -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M3 12h4"/>
+                                <path d="M7 12c2-7 4 7 6 0s4 7 8 0"/>
+
+                            </svg>
+
+                        </span>
+
+                        LTspice
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VEHICLE -->
+
+            <div class="group">
+
+                <h3>
+                    Vehicle & Validation
+                </h3>
+
+
+                <div class="tool-list">
+
+
+                    <!-- HIL -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <rect x="4" y="6" width="16" height="12" rx="2"/>
+                                <path d="M8 10h3"/>
+                                <path d="M8 14h6"/>
+                                <circle cx="17" cy="11" r="1"/>
+                                <circle cx="17" cy="15" r="1"/>
+
+                            </svg>
+
+                        </span>
+
+                        HIL
+
+                    </div>
+
+
+
+                    <!-- ETAS -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M4 17l4-8 4 6 3-10 5 12"/>
+                                <path d="M4 20h16"/>
+
+                            </svg>
+
+                        </span>
+
+                        ETAS
+
+                    </div>
+
+
+
+                    <!-- DIAGRA -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <circle cx="10" cy="10" r="5"/>
+                                <path d="M14 14l5 5"/>
+                                <path d="M8 10h4"/>
+                                <path d="M10 8v4"/>
+
+                            </svg>
+
+                        </span>
+
+                        DiagRA
+
+                    </div>
+
+
+
+                    <!-- CAN -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <circle cx="5" cy="12" r="2"/>
+                                <circle cx="19" cy="12" r="2"/>
+                                <path d="M7 12h10"/>
+                                <path d="M9 8l3 4-3 4"/>
+                                <path d="M15 8l-3 4 3 4"/>
+
+                            </svg>
+
+                        </span>
+
+                        CAN
+
+                    </div>
+
+
+
+                    <!-- LIN -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <circle cx="5" cy="12" r="2"/>
+                                <circle cx="19" cy="12" r="2"/>
+                                <path d="M7 12h10"/>
+                                <path d="M12 8v8"/>
+
+                            </svg>
+
+                        </span>
+
+                        LIN
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAD -->
+
+            <div class="group">
+
+                <h3>
+                    CAD & Engineering
+                </h3>
+
+
+                <div class="tool-list">
+
+
+                    <!-- CREO -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M18 7a7 7 0 1 0 0 10"/>
+                                <path d="M16 9l3-2-1-3"/>
+                                <path d="M16 15l3 2-1 3"/>
+
+                            </svg>
+
+                        </span>
+
+                        PTC Creo
+
+                    </div>
+
+
+
+                    <!-- FUSION -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/autodesk/557462/9eb5a6"
+                                alt=""
+                            >
+
+                        </span>
+
+                        Fusion
+
+                    </div>
+
+
+
+                    <!-- ADINA -->
+
+                    <div class="tool">
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M4 18l4-12 5 10 3-7 4 9"/>
+                                <path d="M4 18h16"/>
+                                <path d="M8 6l5 10"/>
+                                <path d="M13 16l3-7"/>
+
+                            </svg>
+
+                        </span>
+
+                        ADINA / FEM
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
 
-    </footer>
+
+
+        <!-- ===================================
+             EDUCATION
+        ==================================== -->
+
+        <div>
+
+            <div
+                class="section-title"
+                style="margin-bottom: 20px;"
+            >
+                Education
+            </div>
+
+
+            <div class="degree">
+
+                <h3>
+                    M.Sc. Sustainable Energy Systems
+                </h3>
+
+                <p>
+                    HAW Hamburg · 2025–2026
+                    <br>
+                    Expected graduation December 2026
+                </p>
+
+            </div>
+
+
+            <div class="degree">
+
+                <h3>
+                    B.Sc. Mechanical Engineering
+                </h3>
+
+                <p>
+                    Digital Engineering & Mobility · HAW Hamburg
+                    <br>
+                    Final grade: 1.5
+                </p>
+
+            </div>
+
+
+            <div class="degree">
+
+                <h3>
+                    Automotive Mechatronics
+                </h3>
+
+                <p>
+                    Vocational Training · 2017–2021
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
 
 
 
-    <!-- ========================================
-         THEME SWITCH
-    ========================================= -->
+<!-- ========================================
+     FOOTER
+========================================= -->
 
-    <script>
+<footer>
 
-        const button =
-            document.getElementById("theme-toggle");
+    <div class="container">
+        Deno Feuerriegel · Hamburg · 2026
+    </div>
 
-        const root =
-            document.documentElement;
-
-        const saved =
-            localStorage.getItem("color-theme");
+</footer>
 
 
-        if (saved === "light") {
+
+<!-- ========================================
+     THEME TOGGLE
+========================================= -->
+
+<script>
+
+    const button =
+        document.getElementById("theme-toggle");
+
+    const root =
+        document.documentElement;
+
+    const saved =
+        localStorage.getItem("color-theme");
+
+
+    if (saved === "light") {
+        root.classList.add("light");
+    }
+
+    if (saved === "dark") {
+        root.classList.add("dark");
+    }
+
+
+    button.addEventListener("click", function () {
+
+        const systemDark =
+            window.matchMedia(
+                "(prefers-color-scheme: dark)"
+            ).matches;
+
+
+        let currentlyDark;
+
+
+        if (root.classList.contains("dark")) {
+
+            currentlyDark = true;
+
+        } else if (root.classList.contains("light")) {
+
+            currentlyDark = false;
+
+        } else {
+
+            currentlyDark = systemDark;
+
+        }
+
+
+        root.classList.remove(
+            "light",
+            "dark"
+        );
+
+
+        if (currentlyDark) {
+
             root.classList.add("light");
-        }
 
-        if (saved === "dark") {
+            localStorage.setItem(
+                "color-theme",
+                "light"
+            );
+
+        } else {
+
             root.classList.add("dark");
-        }
 
-
-        button.addEventListener("click", function () {
-
-            const systemDark =
-                window.matchMedia(
-                    "(prefers-color-scheme: dark)"
-                ).matches;
-
-
-            let currentlyDark;
-
-
-            if (root.classList.contains("dark")) {
-
-                currentlyDark = true;
-
-            }
-
-            else if (root.classList.contains("light")) {
-
-                currentlyDark = false;
-
-            }
-
-            else {
-
-                currentlyDark = systemDark;
-
-            }
-
-
-            root.classList.remove(
-                "light",
+            localStorage.setItem(
+                "color-theme",
                 "dark"
             );
 
+        }
 
-            if (currentlyDark) {
+    });
 
-                root.classList.add("light");
-
-                localStorage.setItem(
-                    "color-theme",
-                    "light"
-                );
-
-            }
-
-            else {
-
-                root.classList.add("dark");
-
-                localStorage.setItem(
-                    "color-theme",
-                    "dark"
-                );
-
-            }
-
-        });
-
-    </script>
+</script>
 
 </body>
 </html>
