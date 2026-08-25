@@ -1,1201 +1,231 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deno Feuerriegel | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio von Deno Feuerriegel – Maschinenbauingenieur mit Fokus auf digitale Entwicklung, Testautomatisierung, mechatronische Systeme und nachhaltige Energiesysteme."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deno Feuerriegel | Systems Engineer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
     <style>
-      :root {
-        --bg: #08111f;
-        --bg-soft: #0d1930;
-        --panel: rgba(13, 25, 48, 0.72);
-        --panel-strong: rgba(17, 31, 58, 0.92);
-        --line: rgba(255, 255, 255, 0.08);
-        --text: #eef4ff;
-        --muted: #a8b7d8;
-        --accent: #62d0ff;
-        --accent-2: #87f0c8;
-        --accent-3: #8ca5ff;
-        --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
-        --radius-xl: 28px;
-        --radius-lg: 20px;
-        --radius-md: 14px;
-        --max: 1180px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(98, 208, 255, 0.18), transparent 28%),
-          radial-gradient(circle at 85% 15%, rgba(140, 165, 255, 0.14), transparent 24%),
-          linear-gradient(180deg, #07101d 0%, #0b1324 100%);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: min(calc(100% - 32px), var(--max));
-        margin: 0 auto;
-      }
-
-      .glass {
-        background: var(--panel);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-      }
-
-      .section {
-        padding: 96px 0;
-      }
-
-      .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 24px;
-        margin-bottom: 32px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-        color: var(--accent);
-        font-size: 0.85rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      h1, h2, h3, h4, p {
-        margin: 0;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 6vw, 5.6rem);
-        line-height: 0.96;
-        letter-spacing: -0.04em;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1.02;
-        letter-spacing: -0.03em;
-      }
-
-      h3 {
-        font-size: 1.2rem;
-        line-height: 1.2;
-      }
-
-      p.lead {
-        font-size: clamp(1rem, 2vw, 1.15rem);
-        color: var(--muted);
-        max-width: 760px;
-      }
-
-      .muted {
-        color: var(--muted);
-      }
-
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        background: rgba(6, 12, 25, 0.72);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-      }
-
-      .topbar-inner {
-        min-height: 78px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .brand {
-        font-weight: 700;
-        font-size: 1rem;
-        letter-spacing: 0.02em;
-      }
-
-      .brand small {
-        display: block;
-        color: var(--muted);
-        font-weight: 500;
-        font-size: 0.82rem;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .nav a,
-      .button {
-        border: 1px solid rgba(255,255,255,0.08);
-        background: rgba(255,255,255,0.04);
-        color: var(--text);
-        padding: 11px 16px;
-        border-radius: 999px;
-        transition: 180ms ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        cursor: pointer;
-      }
-
-      .nav a:hover,
-      .button:hover,
-      .chip:hover,
-      .tab:hover {
-        transform: translateY(-1px);
-        border-color: rgba(255,255,255,0.18);
-        background: rgba(255,255,255,0.07);
-      }
-
-      .button.primary {
-        background: linear-gradient(135deg, rgba(98,208,255,0.22), rgba(135,240,200,0.18));
-        border-color: rgba(98,208,255,0.35);
-      }
-
-      .hero {
-        padding: 72px 0 42px;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.3fr 0.9fr;
-        gap: 28px;
-        align-items: stretch;
-      }
-
-      .hero-card,
-      .panel,
-      .timeline-item,
-      .project-card,
-      .skill-card,
-      .edu-card,
-      .contact-card {
-        border-radius: var(--radius-xl);
-        border: 1px solid var(--line);
-        background: var(--panel);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        box-shadow: var(--shadow);
-      }
-
-      .hero-card {
-        padding: 38px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-card::before {
-        content: "";
-        position: absolute;
-        inset: auto -10% -18% auto;
-        width: 320px;
-        height: 320px;
-        background: radial-gradient(circle, rgba(98,208,255,0.22), transparent 68%);
-        pointer-events: none;
-      }
-
-      .hero-copy {
-        display: grid;
-        gap: 22px;
-      }
-
-      .headline-accent {
-        color: var(--accent);
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 6px;
-      }
-
-      .hero-meta {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 10px;
-      }
-
-      .stat {
-        padding: 18px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.06);
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 1.35rem;
-        letter-spacing: -0.03em;
-      }
-
-      .hero-side {
-        display: grid;
-        gap: 18px;
-      }
-
-      .portrait {
-        min-height: 320px;
-        padding: 22px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .portrait-inner {
-        height: 100%;
-        min-height: 276px;
-        border-radius: 24px;
-        border: 1px dashed rgba(255,255,255,0.16);
-        background:
-          linear-gradient(180deg, rgba(98,208,255,0.08), rgba(140,165,255,0.04)),
-          repeating-linear-gradient(
-            135deg,
-            rgba(255,255,255,0.03),
-            rgba(255,255,255,0.03) 10px,
-            rgba(255,255,255,0.01) 10px,
-            rgba(255,255,255,0.01) 20px
-          );
-        display: grid;
-        place-items: center;
-        text-align: center;
-        padding: 24px;
-      }
-
-      .portrait-badge {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(8,17,31,0.7);
-        border: 1px solid rgba(255,255,255,0.08);
-        font-size: 0.82rem;
-        color: var(--muted);
-      }
-
-      .info-strip {
-        padding: 22px;
-        display: grid;
-        gap: 12px;
-      }
-
-      .info-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        color: var(--muted);
-        font-size: 0.96rem;
-      }
-
-      .info-row strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .chip,
-      .tab {
-        padding: 10px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.08);
-        background: rgba(255,255,255,0.04);
-        color: var(--text);
-        cursor: pointer;
-        transition: 180ms ease;
-        font: inherit;
-      }
-
-      .chip.active,
-      .tab.active {
-        background: linear-gradient(135deg, rgba(98,208,255,0.22), rgba(135,240,200,0.16));
-        border-color: rgba(98,208,255,0.35);
-      }
-
-      .about-grid,
-      .education-grid,
-      .skills-grid,
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .panel {
-        padding: 28px;
-      }
-
-      .bullet-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      .bullet {
-        display: grid;
-        grid-template-columns: 12px 1fr;
-        gap: 12px;
-        color: var(--muted);
-      }
-
-      .bullet-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-top: 7px;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        box-shadow: 0 0 0 6px rgba(98,208,255,0.08);
-      }
-
-      .timeline {
-        display: grid;
-        gap: 16px;
-      }
-
-      .timeline-item {
-        padding: 26px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .timeline-top {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        align-items: start;
-        margin-bottom: 12px;
-      }
-
-      .timeline-kicker,
-      .card-meta {
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .timeline-item ul,
-      .project-card ul {
-        padding-left: 18px;
-        margin: 14px 0 0;
-        color: var(--muted);
-      }
-
-      .timeline-item li,
-      .project-card li {
-        margin: 8px 0;
-      }
-
-      .projects-filter {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 24px;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-      }
-
-      .project-card {
-        padding: 24px;
-        display: grid;
-        gap: 16px;
-      }
-
-      .project-tagline {
-        display: inline-flex;
-        width: fit-content;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-        color: var(--accent);
-        font-size: 0.84rem;
-      }
-
-      .project-visual {
-        min-height: 180px;
-        border-radius: 20px;
-        border: 1px dashed rgba(255,255,255,0.16);
-        background:
-          linear-gradient(180deg, rgba(140,165,255,0.10), rgba(98,208,255,0.04)),
-          radial-gradient(circle at top right, rgba(135,240,200,0.12), transparent 40%);
-        display: grid;
-        place-items: center;
-        text-align: center;
-        padding: 18px;
-        color: var(--muted);
-      }
-
-      .project-foot {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .mini-chip {
-        padding: 7px 10px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      .skill-card,
-      .edu-card,
-      .contact-card {
-        padding: 24px;
-      }
-
-      .skill-meter {
-        height: 10px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.06);
-        overflow: hidden;
-        margin-top: 12px;
-      }
-
-      .skill-meter span {
-        display: block;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      }
-
-      .edu-card .grade {
-        margin-top: 14px;
-        display: inline-flex;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .quote-box {
-        padding: 26px;
-        border-radius: var(--radius-xl);
-        border: 1px solid rgba(255,255,255,0.08);
-        background: linear-gradient(135deg, rgba(98,208,255,0.10), rgba(140,165,255,0.08));
-      }
-
-      .contact-grid {
-        align-items: stretch;
-      }
-
-      .contact-card {
-        display: grid;
-        gap: 18px;
-      }
-
-      .contact-list {
-        display: grid;
-        gap: 12px;
-      }
-
-      .contact-link {
-        padding: 14px 16px;
-        border-radius: 16px;
-        border: 1px solid rgba(255,255,255,0.08);
-        background: rgba(255,255,255,0.04);
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        color: var(--muted);
-      }
-
-      .contact-link strong {
-        color: var(--text);
-      }
-
-      .footer {
-        padding: 24px 0 56px;
-        color: var(--muted);
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(22px);
-        transition: 700ms ease;
-      }
-
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      [data-project] {
-        display: grid;
-      }
-
-      [data-project].hidden {
-        display: none;
-      }
-
-      @media (max-width: 1080px) {
-        .hero-grid,
-        .projects-grid,
-        .about-grid,
-        .education-grid,
-        .skills-grid,
-        .contact-grid {
-          grid-template-columns: 1fr;
+        :root {
+            --bg: #030712;
+            --card-bg: #111827;
+            --accent: #10b981; 
+            --accent-glow: rgba(16, 185, 129, 0.2);
+            --text: #f3f4f6;
+            --text-dim: #9ca3af;
+            --border: #1f2937;
         }
 
-        .hero-meta {
-          grid-template-columns: 1fr;
-        }
-      }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
 
-      @media (max-width: 760px) {
-        .section {
-          padding: 72px 0;
-        }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
 
-        .hero {
-          padding-top: 36px;
-        }
+        .blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(var(--accent-glow) 0%, transparent 70%); z-index: -1; top: -100px; right: -100px; }
 
-        .topbar-inner,
-        .section-head,
-        .timeline-top,
-        .info-row {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+        nav { padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+        .logo span { color: var(--accent); }
 
-        .hero-card,
-        .panel,
-        .timeline-item,
-        .project-card,
-        .skill-card,
-        .edu-card,
-        .contact-card {
-          border-radius: 22px;
-        }
-      }
+        header { padding: 100px 10% 60px; max-width: 1200px; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; background: var(--accent-glow); color: var(--accent); font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid var(--accent); }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-p { font-size: 1.25rem; color: var(--text-dim); max-width: 700px; margin-bottom: 2.5rem; }
+
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; }
+        .btn-primary { background: var(--accent); color: #000; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px var(--accent-glow); }
+        .btn-secondary { border: 1px solid var(--border); color: var(--text); }
+        .btn-secondary:hover { background: var(--border); }
+
+        /* --- NEU: Timeline Styling --- */
+        .timeline-section { padding: 40px 10%; max-width: 1000px; margin: 0 auto; }
+        .timeline { border-left: 2px solid var(--border); padding-left: 2rem; position: relative; }
+        .timeline-item { margin-bottom: 3rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: 0.3rem; width: 14px; height: 14px; border-radius: 50%; background: var(--card-bg); border: 2px solid var(--accent); }
+        .timeline-date { font-size: 0.9rem; color: var(--accent); font-weight: bold; margin-bottom: 0.5rem; }
+        .timeline-title { font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; }
+        .timeline-text { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* Bento Grid */
+        .section-title { padding: 0 10%; font-size: 2rem; margin-bottom: 2rem; max-width: 1400px; margin-left: auto; margin-right: auto; }
+        .section-title span { color: var(--accent); }
+        
+        .grid-container { padding: 0 10% 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
+        .bento-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; transition: 0.3s; display: flex; flex-direction: column; }
+        .bento-item:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .col-2 { grid-column: span 2; }
+        
+        h3 { margin-bottom: 1rem; font-size: 1.3rem; color: var(--text); }
+        .bento-item p { color: var(--text-dim); font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.5rem; }
+        
+        .tag-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tag-small { font-size: 0.75rem; background: #1f2937; padding: 4px 10px; border-radius: 6px; color: var(--text); display: flex; align-items: center; gap: 5px; }
+
+        /* Skills */
+        .skills-section { background: var(--card-bg); padding: 80px 10%; border-top: 1px solid var(--border); }
+        .skills-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
+        .skill-category h4 { color: var(--text); margin-bottom: 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .skill-list { list-style: none; }
+        .skill-list li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 12px; color: var(--text-dim); }
+        .skill-icon { font-size: 1.5rem; color: var(--accent); } /* Macht die Icons in den Listen grün */
+
+        footer { padding: 4rem 10%; text-align: center; color: var(--text-dim); background: var(--bg); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1000px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .grid-container { grid-template-columns: 1fr; } .col-2 { grid-column: span 1; } }
     </style>
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="#top">
-          Deno Feuerriegel
-          <small>Mechanical Engineering · Automation · Data-Driven Systems</small>
-        </a>
-        <nav class="nav">
-          <a href="#profil">Profil</a>
-          <a href="#experience">Erfahrung</a>
-          <a href="#projects">Projekte</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Kontakt</a>
-        </nav>
-      </div>
+</head>
+<body>
+
+    <div class="blob"></div>
+
+    <nav>
+        <div class="logo">DENO<span>.F</span></div>
+        <div class="btn-group">
+            <a href="mailto:deno.feuerriegel@gmail.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Kontakt</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="badge">M.Sc. Sustainable Energy Systems</div>
+        <h1 class="reveal">Mechanical Engineer <br>& <span style="color: var(--accent)">Data Driven.</span></h1>
+        <p class="hero-p reveal">
+            Spezialisiert auf die Schnittstelle zwischen physischer Mechanik und intelligenter Software. 
+            Vom Schraubenschlüssel als Kfz-Mechatroniker bis zur Testautomatisierung und Machine Learning für nachhaltige Energiesysteme.
+        </p>
+        <div class="btn-group reveal">
+            <a href="#stationen" class="btn btn-primary">Stationen entdecken</a>
+            <a href="Lebenslauf_Deno_Feuerriegel.pdf" download class="btn btn-secondary">CV herunterladen (PDF)</a>
+        </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <article class="hero-card reveal">
-            <div class="hero-copy">
-              <span class="eyebrow">Portfolio · Maschinenbauingenieur</span>
-              <h1>
-                Ich entwickle an der Schnittstelle von
-                <span class="headline-accent">Mechanik, Software und nachhaltigen technischen Systemen.</span>
-              </h1>
-              <p class="lead">
-                Ich bin Deno Feuerriegel, Maschinenbauingenieur mit praktischer Basis aus der Kfz-Mechatronik,
-                Erfahrung in der Antriebsentwicklung bei Volkswagen und einem akademischen Schwerpunkt auf
-                Digital Engineering, Automatisierung, Machine Learning und nachhaltigen Energiesystemen.
-              </p>
-              <div class="hero-actions">
-                <a class="button primary" href="#projects">Projekte ansehen</a>
-                <a class="button" href="mailto:deno.feuerriegel@gmail.com">E-Mail schreiben</a>
-                <a class="button" href="./Deno_Feuerriegel_CV.pdf" target="_blank" rel="noreferrer">CV als PDF</a>
-              </div>
-              <div class="hero-meta">
-                <div class="stat">
-                  <span class="muted">Bachelor Maschinenbau & Produktion</span>
-                  <strong>1,5</strong>
-                </div>
-                <div class="stat">
-                  <span class="muted">Master Nachhaltige Energiesysteme</span>
-                  <strong>1,6</strong>
-                </div>
-                <div class="stat">
-                  <span class="muted">Fokus</span>
-                  <strong>Automation · ML · Energy</strong>
-                </div>
-              </div>
+    <section class="timeline-section reveal">
+        <h2 style="font-size: 2rem; margin-bottom: 2rem;">Mein Weg<span>.</span></h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Aktuell</div>
+                <div class="timeline-title">Masterarbeit: Automatisierte Renaturierung</div>
+                <div class="timeline-text">Konzeptionierung von Systemen zur Wiederansiedlung von Seegras. Ein Projekt an der Schnittstelle von Mechatronik und Ökologie.</div>
             </div>
-          </article>
 
-          <div class="hero-side reveal">
-            <aside class="portrait hero-card">
-              <span class="portrait-badge">Platzhalter für Portrait oder Projektscreenshot</span>
-              <div class="portrait-inner">
-                <div>
-                  <h3>Visual Placeholder</h3>
-                  <p class="muted" style="margin-top: 10px; max-width: 320px;">
-                    Hier kannst du später ein Portrait, einen HiL-Prüfstand, ein Windenergie-Projekt oder einen Drohnen-Screenshot einfügen.
-                  </p>
-                </div>
-              </div>
-            </aside>
-            <aside class="info-strip hero-card">
-              <div class="info-row"><span>Standort</span><strong>Hamburg</strong></div>
-              <div class="info-row"><span>E-Mail</span><strong>deno.feuerriegel@gmail.com</strong></div>
-              <div class="info-row"><span>LinkedIn</span><strong>deno-feuerriegel</strong></div>
-              <div class="chips">
-                <span class="chip active">Python</span>
-                <span class="chip active">HiL</span>
-                <span class="chip active">Machine Learning</span>
-                <span class="chip">Robotik</span>
-                <span class="chip">Windenergie</span>
-                <span class="chip">Mechatronik</span>
-              </div>
-            </aside>
-          </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Masterstudium</div>
+                <div class="timeline-title">M.Sc. Nachhaltige Energiesysteme im Maschinenbau</div>
+                <div class="timeline-text">Fokus auf Systemtechnik, Windenergie und Machine Learning. Aktueller Schnitt: 1,6.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Bachelor & VW China</div>
+                <div class="timeline-title">B.Sc. Maschinenbau (Digital Engineering)</div>
+                <div class="timeline-text">Fokus auf Python, KI und Robotik. 6 Monate Praktikum und Bachelorarbeit in der Antriebsentwicklung bei der Volkswagen AG (EASP) in China. Abschlussnote: 1,5.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Der Ursprung</div>
+                <div class="timeline-title">Ausbildung zum Kfz-Mechatroniker</div>
+                <div class="timeline-text">Kuhn + Witte GmbH & Co. KG. Das handwerkliche Fundament für das Verständnis komplexer technischer Systeme in der Praxis.</div>
+            </div>
+
         </div>
-      </section>
+    </section>
 
-      <section class="section" id="profil">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Profil</span>
-              <h2>Klarer roter Faden statt beliebigem Maschinenbau-Profil</h2>
+    <h2 class="section-title" id="stationen" style="margin-top: 4rem;">Stationen & <span>Erfahrung</span></h2>
+    
+    <div class="grid-container">
+        
+        <div class="bento-item col-2 reveal">
+            <h3>Testautomatisierung (HiL) bei VW</h3>
+            <p>Einsatz in der Abteilung für Antriebssoftware & Projektmanagement (EASP) in China. Entwicklung automatisierter Testumgebungen am Hardware-in-the-Loop Prüfstand zur Absicherung komplexer Funktionen.</p>
+            <div class="tag-list">
+                <span class="tag-small"><i class="devicon-python-plain" style="color: #4ade80;"></i> Python</span>
+                <span class="tag-small">ETAS</span>
+                <span class="tag-small">ODIS</span>
+                <span class="tag-small">diagRA</span>
             </div>
-            <p class="lead">
-              Mein Profil verbindet praktische Werkstatt- und Fahrzeugerfahrung mit datengetriebener Entwicklung,
-              Validierung mechatronischer Systeme und nachhaltigen Energieanwendungen.
-            </p>
-          </div>
-
-          <div class="about-grid">
-            <article class="panel reveal">
-              <h3>Wofür ich stehe</h3>
-              <div class="bullet-list">
-                <div class="bullet">
-                  <span class="bullet-dot"></span>
-                  <div>
-                    <strong>Technisches Fundament aus der Praxis:</strong>
-                    vom Kfz-Mechatroniker über Fahrzeugerprobung bis zur Entwicklungsarbeit in industriellem Umfeld.
-                  </div>
-                </div>
-                <div class="bullet">
-                  <span class="bullet-dot"></span>
-                  <div>
-                    <strong>Digitale Produkt- und Systementwicklung:</strong>
-                    Schwerpunkt auf Python, Automatisierung, Softwaretests, Machine Learning und mechatronischen Systemen.
-                  </div>
-                </div>
-                <div class="bullet">
-                  <span class="bullet-dot"></span>
-                  <div>
-                    <strong>Brücke zu nachhaltigen Energiesystemen:</strong>
-                    Windenergie, elektrische Antriebe und datenbasierte Prognose- und Auswertungswerkzeuge.
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="panel reveal">
-              <h3>Positionierung für Bewerbungen</h3>
-              <p class="muted" style="margin-top: 12px;">
-                Die saubere Positionierung ist nicht „alles ein bisschen“, sondern:
-              </p>
-              <div class="quote-box" style="margin-top: 18px;">
-                <h3>Maschinenbauingenieur mit Fokus auf digitale Entwicklung, Testautomatisierung und datengetriebene technische Systeme – von Antriebs- und HiL-Validierung bis zu Anwendungen in nachhaltigen Energiesystemen.</h3>
-              </div>
-              <p class="muted" style="margin-top: 18px;">
-                Damit bist du für Rollen in Entwicklung, Versuch, Testautomatisierung, Systems Engineering,
-                technische Datenanalyse, mechatronische Produktentwicklung und energietechnische ML-Anwendungen sauber anschlussfähig.
-              </p>
-            </article>
-          </div>
         </div>
-      </section>
 
-      <section class="section" id="experience">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Erfahrung</span>
-              <h2>Praxis in Entwicklung, Validierung und mechatronischen Systemen</h2>
+        <div class="bento-item reveal">
+            <h3>Leistungsprognose Windenergie</h3>
+            <p>Masterprojekt: Entwicklung einer datenbasierten Leistungskurve und eines Prognosetools (Machine Learning) zur Analyse komplexer Windpark-Daten.</p>
+            <div class="tag-list">
+                <span class="tag-small"><i class="devicon-matlab-plain" style="color: #60a5fa;"></i> MATLAB</span>
+                <span class="tag-small">Machine Learning</span>
             </div>
-          </div>
-
-          <div class="timeline">
-            <article class="timeline-item reveal">
-              <div class="timeline-top">
-                <div>
-                  <h3>Werkstudent · projassment</h3>
-                  <p class="timeline-kicker">seit Mai 2025 · Consulting / technische Entwicklung</p>
-                </div>
-                <span class="card-meta">Hybrid</span>
-              </div>
-              <p class="muted">
-                Mitarbeit an komplexen mechatronischen Systemen mit Fokus auf Architektur, Hardwareintegration,
-                Visualisierung und prototypische Produktentwicklung im Umfeld maritimer und unbemannter Systeme.
-              </p>
-              <ul>
-                <li>Systemarchitektur und Requirements Engineering für komplexe mechatronische Systeme</li>
-                <li>Hardwareentwicklung und PCB-Design für Spannungsversorgung und Leistungsdistribution</li>
-                <li>Integration von Sensorik und Steuereinheiten in automatisierte Plattformen</li>
-                <li>Visualisierungen, technische Strukturierung und datenbezogene Unterstützung in Entwicklungsprojekten</li>
-                <li>Ein größeres Drohnen-/USV-Projekt umgesetzt, bewusst nicht öffentlich dargestellt</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item reveal">
-              <div class="timeline-top">
-                <div>
-                  <h3>Volkswagen · Bachelorarbeit</h3>
-                  <p class="timeline-kicker">Sept. 2024 – Feb. 2025 · Entwicklung Antriebssoftware</p>
-                </div>
-                <span class="card-meta">HiL · Testautomatisierung</span>
-              </div>
-              <p class="muted">
-                Bachelorarbeit zur Testautomatisierung am Hardware-in-the-Loop-Prüfstand im Umfeld der Antriebsentwicklung.
-              </p>
-              <ul>
-                <li>Automatisierung von Testabläufen an HiL-Testständen</li>
-                <li>Entwicklung, Überarbeitung und Automatisierung von Softwaretests</li>
-                <li>Prozessunterstützung in der Softwarevalidierung</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item reveal">
-              <div class="timeline-top">
-                <div>
-                  <h3>Volkswagen · Praktikum EASP</h3>
-                  <p class="timeline-kicker">März 2024 – Aug. 2024 · Entwicklung Antriebssoftware & Projektmanagement, China</p>
-                </div>
-                <span class="card-meta">6 Monate</span>
-              </div>
-              <p class="muted">
-                Praktikum in der Antriebsentwicklung mit Nähe zu Applikation, OBD, Messfahrten, Datenauswertung und Validierung.
-              </p>
-              <ul>
-                <li>Applikation und Softwareinbetriebnahme an Fahrzeugen und HiL-Systemen</li>
-                <li>Unterstützung des Tagesgeschäfts in Applikation und OBD inklusive Messfahrten und Datenauswertung</li>
-                <li>Bewertung und Validierung von Softwarequalität</li>
-                <li>Organisation und Koordination eines internen Austauschprogramms</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item reveal">
-              <div class="timeline-top">
-                <div>
-                  <h3>CoTec GmbH · Werkstudent Fahrzeugerprobung</h3>
-                  <p class="timeline-kicker">Dez. 2021 – Jan. 2024 · Assistenzsystemvalidierung</p>
-                </div>
-                <span class="card-meta">Fahrversuch</span>
-              </div>
-              <ul>
-                <li>Validierung von Fahrerassistenzsystemen</li>
-                <li>Fahrzeugtests und Auswertung</li>
-                <li>Fehlerdokumentation und strukturierte Rückmeldung</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item reveal">
-              <div class="timeline-top">
-                <div>
-                  <h3>Ausbildung · Kfz-Mechatroniker</h3>
-                  <p class="timeline-kicker">Aug. 2017 – Jan. 2021 · Kuhn + Witte GmbH & Co. KG</p>
-                </div>
-                <span class="card-meta">Technische Basis</span>
-              </div>
-              <p class="muted">
-                Früh geprägtes technisches Fundament in Diagnose, Reparatur, Fahrzeugtechnik und systematischer Fehlersuche.
-              </p>
-            </article>
-          </div>
         </div>
-      </section>
 
-      <section class="section" id="projects">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Projekte</span>
-              <h2>Ausgewählte Arbeiten mit technischem Tiefgang</h2>
+        <div class="bento-item reveal" style="padding: 0; overflow: hidden;">
+            <img src="images/adas.jpg" alt="ADAS Validierung" style="width: 100%; height: 160px; object-fit: cover; border-bottom: 1px solid var(--border);">
+            <div style="padding: 1.5rem;">
+                <h3 style="margin-bottom: 0.5rem;">ADAS Validierung</h3>
+                <p style="margin-bottom: 0;">Werkstudent bei CoTec GmbH. Testfahrer zur Erprobung und Validierung modernster Fahrerassistenzsysteme im realen Verkehr.</p>
             </div>
-            <p class="lead">
-              Die Projekte zeigen die Linie vom test- und softwaregestützten Engineering bis zur Anwendung datengetriebener Methoden in Energie- und Automatisierungssystemen.
-            </p>
-          </div>
-
-          <div class="projects-filter reveal">
-            <button class="tab active" data-filter="all">Alle</button>
-            <button class="tab" data-filter="automation">Automation</button>
-            <button class="tab" data-filter="ml">Machine Learning</button>
-            <button class="tab" data-filter="energy">Energie</button>
-            <button class="tab" data-filter="mechatronics">Mechatronik</button>
-          </div>
-
-          <div class="projects-grid">
-            <article class="project-card reveal" data-project="automation ml">
-              <span class="project-tagline">Bachelorarbeit · Volkswagen</span>
-              <h3>Testautomatisierung am HiL-Prüfstand</h3>
-              <p class="muted">
-                Aufbau und Weiterentwicklung automatisierter Testabläufe im Umfeld der Antriebssoftwarevalidierung.
-              </p>
-              <div class="project-visual">
-                Platzhalter für Screenshot aus Testumgebung, Testskript, Prüfstandslogik oder ETAS-Setup
-              </div>
-              <ul>
-                <li>Automatisierung von Testsequenzen und softwarebezogenen Prüfabläufen</li>
-                <li>Strukturierung und Überarbeitung bestehender Tests</li>
-                <li>Schnittstelle zwischen Hardware, Software und Validierungsprozess</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">HiL</span>
-                <span class="mini-chip">ETAS</span>
-                <span class="mini-chip">Softwaretests</span>
-                <span class="mini-chip">Validation</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-project="ml energy">
-              <span class="project-tagline">Masterprojekt</span>
-              <h3>Windpark-Leistungskurve und Prognosetool mit ML</h3>
-              <p class="muted">
-                Entwicklung eines datenbasierten Tools zur Modellierung der Windparkleistung und zur Leistungsprognose.
-              </p>
-              <div class="project-visual">
-                Platzhalter für Diagramme, Regressionsplots, Zeitreihen oder Tool-UI aus dem ML-Projekt
-              </div>
-              <ul>
-                <li>Datenaufbereitung und strukturierte Analyse energietechnischer Messdaten</li>
-                <li>Erstellung einer Windparkleistungskurve</li>
-                <li>Entwicklung eines Prognose-Tools auf Basis von Machine-Learning-Methoden</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">Python</span>
-                <span class="mini-chip">Machine Learning</span>
-                <span class="mini-chip">Windenergie</span>
-                <span class="mini-chip">Data Analysis</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-project="mechatronics automation">
-              <span class="project-tagline">Werkstudent · projassment</span>
-              <h3>Mechatronische Drohnen-/USV-Entwicklung</h3>
-              <p class="muted">
-                Mitarbeit an einem größeren Entwicklungsprojekt im Bereich unbemannter Systeme. Details bleiben aus Vertraulichkeitsgründen bewusst abstrakt.
-              </p>
-              <div class="project-visual">
-                Platzhalter für späteren neutralen Screenshot, CAD-Ausschnitt oder Systemarchitektur
-              </div>
-              <ul>
-                <li>Systemarchitektur und technische Strukturierung</li>
-                <li>Sensorik-, Hardware- und Regelungseinbindung</li>
-                <li>PCB-Entwicklung und Unterstützung beim funktionalen Prototyping</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">PCB</span>
-                <span class="mini-chip">KiCad</span>
-                <span class="mini-chip">Mechatronik</span>
-                <span class="mini-chip">Unmanned Systems</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-project="energy mechatronics">
-              <span class="project-tagline">Masterarbeit · in Vorbereitung</span>
-              <h3>Automatisierte Renaturierung von Seegras</h3>
-              <p class="muted">
-                Konzeptionierung eines automatisierten technischen Ansatzes für die Renaturierung mariner Ökosysteme.
-              </p>
-              <div class="project-visual">
-                Platzhalter für Konzeptgrafik, Prozessschema oder Versuchsaufbau
-              </div>
-              <ul>
-                <li>Systemische Konzeption eines automatisierten Gesamtsystems</li>
-                <li>Verbindung von Nachhaltigkeit, Mechatronik und potenzieller Sensorik/Automatisierung</li>
-                <li>Frühe Phase – Inhalte können später ergänzt werden</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">Systems Engineering</span>
-                <span class="mini-chip">Automation</span>
-                <span class="mini-chip">Sustainability</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-project="automation mechatronics">
-              <span class="project-tagline">Praktische Erfahrung</span>
-              <h3>Validierung von Fahrerassistenzsystemen</h3>
-              <p class="muted">
-                Fahrzeugnahe Erprobung, Testdurchführung und strukturierte Fehlerdokumentation in der Assistenzsystemvalidierung.
-              </p>
-              <div class="project-visual">
-                Platzhalter für Fahrversuch, Testfahrzeug, Strecken- oder Auswertungsbildschirm
-              </div>
-              <ul>
-                <li>Praxisnahe Test- und Bewertungsszenarien</li>
-                <li>Technische Fehlerbeschreibung und Rückführung in Entwicklungsprozesse</li>
-                <li>Saubere Verbindung aus Versuch, Bewertung und Dokumentation</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">Vehicle Testing</span>
-                <span class="mini-chip">ADAS</span>
-                <span class="mini-chip">Validation</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-project="ml automation">
-              <span class="project-tagline">Profilbaustein</span>
-              <h3>Python-basierte Datenanalyse und technische Tools</h3>
-              <p class="muted">
-                Im Studium und in Projekten wiederkehrend: strukturierte Datenauswertung, technische Visualisierung und automatisierte Workflows.
-              </p>
-              <div class="project-visual">
-                Platzhalter für Code-Screenshot, Dashboard oder Auswertungsgrafik
-              </div>
-              <ul>
-                <li>Datenaufbereitung und technische Analyse</li>
-                <li>Visualisierung und toolgestützte Entscheidungsunterstützung</li>
-                <li>Sehr gut anschlussfähig für Test, Versuch und Engineering Analytics</li>
-              </ul>
-              <div class="project-foot">
-                <span class="mini-chip">Python</span>
-                <span class="mini-chip">Excel</span>
-                <span class="mini-chip">Visualisierung</span>
-              </div>
-            </article>
-          </div>
         </div>
-      </section>
 
-      <section class="section" id="education">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Studium</span>
-              <h2>Akademische Linie: Digital Engineering trifft nachhaltige Energiesysteme</h2>
+        <div class="bento-item col-2 reveal">
+            <h3>Maritime Robotik & Visualisierung</h3>
+            <p>Werkstudententätigkeit im Bereich Munitionsbergung (projassment). Schwerpunkt auf Datenaufbereitung (Excel, Visualisierungen) und technischer Unterstützung im Drohnen-Ökosystem (Unmanned Surface Vehicles), inklusive Know-how in der MissionPlanner-Umgebung.</p>
+            <div class="tag-list">
+                <span class="tag-small">MissionPlanner</span>
+                <span class="tag-small">USV Systems</span>
+                <span class="tag-small">Data Visualization</span>
             </div>
-          </div>
-
-          <div class="education-grid">
-            <article class="edu-card reveal">
-              <h3>Bachelor · Maschinenbau und Produktion</h3>
-              <p class="card-meta" style="margin-top: 6px;">HAW Hamburg · Vertiefung: Digital Engineering & Mobility</p>
-              <p class="muted" style="margin-top: 14px;">
-                Vertiefung mit klarer technischer Ausrichtung auf digitale Methoden, Softwarebezug und automatisierte Systeme.
-              </p>
-              <div class="chips" style="margin-top: 16px;">
-                <span class="chip">Python</span>
-                <span class="chip">Robotik</span>
-                <span class="chip">Machine Learning</span>
-                <span class="chip">Automatisierungstechnik</span>
-                <span class="chip">Angewandte KI</span>
-                <span class="chip">Softwareanwendungen</span>
-              </div>
-              <div class="grade">Abschlussnote: 1,5</div>
-            </article>
-
-            <article class="edu-card reveal">
-              <h3>Master · Nachhaltige Energiesysteme im Maschinenbau</h3>
-              <p class="card-meta" style="margin-top: 6px;">HAW Hamburg · laufend</p>
-              <p class="muted" style="margin-top: 14px;">
-                Erweiterung des Profils um energietechnische Systeme, Windenergie, elektrische Antriebe, Systemtechnik und mechatronische Entwicklung.
-              </p>
-              <div class="chips" style="margin-top: 16px;">
-                <span class="chip">Machine Learning Methods</span>
-                <span class="chip">Systemtechnik</span>
-                <span class="chip">Windenergieanlagen</span>
-                <span class="chip">Elektrische Antriebssysteme</span>
-                <span class="chip">Mechatronische Systeme</span>
-                <span class="chip">Statistische Datenauswertung</span>
-              </div>
-              <div class="grade">Aktueller Stand: 1,6</div>
-            </article>
-          </div>
         </div>
-      </section>
 
-      <section class="section" id="skills">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Skills</span>
-              <h2>Werkzeuge und Kompetenzen</h2>
+    </div>
+
+    <section class="skills-section">
+        <div class="skills-grid reveal">
+            
+            <div class="skill-category">
+                <h4>Software & Data</h4>
+                <ul class="skill-list">
+                    <li><i class="devicon-python-plain skill-icon"></i> Python (ML, Data Analysis)</li>
+                    <li><i class="devicon-matlab-plain skill-icon"></i> MATLAB / Simulink</li>
+                    <li><i class="devicon-git-plain skill-icon"></i> Git / Version Control</li>
+                </ul>
             </div>
-            <p class="lead">
-              Technisch glaubwürdig wird ein Portfolio erst dann, wenn klar wird, womit tatsächlich gearbeitet wurde.
-            </p>
-          </div>
-
-          <div class="skills-grid">
-            <article class="skill-card reveal">
-              <h3>Programmierung & Daten</h3>
-              <p class="muted" style="margin-top: 10px;">Python, MATLAB, technische Datenanalyse, Visualisierung, ML-nahe Workflows</p>
-              <div class="skill-meter"><span style="width: 86%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <h3>Test & Validierung</h3>
-              <p class="muted" style="margin-top: 10px;">HiL, ETAS, ODIS, Softwaretests, Versuch, Fehleranalyse, strukturierte Validierung</p>
-              <div class="skill-meter"><span style="width: 90%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <h3>CAD & Hardware</h3>
-              <p class="muted" style="margin-top: 10px;">Creo, Fusion, KiCad, PCB-Entwicklung, Hardwareintegration, Sensorik</p>
-              <div class="skill-meter"><span style="width: 78%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <h3>Systeme & Entwicklung</h3>
-              <p class="muted" style="margin-top: 10px;">Systems Engineering, mechatronische Produktentwicklung, Requirements, Prototyping</p>
-              <div class="skill-meter"><span style="width: 84%"></span></div>
-            </article>
-          </div>
-
-          <div class="panel reveal" style="margin-top: 22px;">
-            <h3>Interessen mit technischem Bezug</h3>
-            <div class="chips" style="margin-top: 16px;">
-              <span class="chip">Kraftsport</span>
-              <span class="chip">Laufen</span>
-              <span class="chip">Kochen</span>
-              <span class="chip">Drohnenökosysteme</span>
-              <span class="chip">Mobilität</span>
+            
+            <div class="skill-category">
+                <h4>Engineering Tools</h4>
+                <ul class="skill-list">
+                    <li><span class="skill-icon">⚡</span> ETAS / INCA</li>
+                    <li><span class="skill-icon">🔌</span> diagRA / ODIS</li>
+                    <li><span class="skill-icon">🖥️</span> HiL-Simulation</li>
+                </ul>
             </div>
-          </div>
+            
+            <div class="skill-category">
+                <h4>Hardware & CAD</h4>
+                <ul class="skill-list">
+                    <li><span class="skill-icon">⚙️</span> Creo & Fusion 360</li>
+                    <li><span class="skill-icon">🖧</span> KiCad (PCB-Entwicklung)</li>
+                    <li><span class="skill-icon">🛠️</span> Prototyping / Mechatronik</li>
+                </ul>
+            </div>
+
         </div>
-      </section>
+    </section>
 
-      <section class="section" id="contact">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <span class="eyebrow">Kontakt</span>
-              <h2>Offen für anspruchsvolle Entwicklungs- und Ingenieurrollen</h2>
-            </div>
-          </div>
-
-          <div class="contact-grid">
-            <article class="contact-card reveal">
-              <h3>Was für Rollen passen?</h3>
-              <p class="muted">
-                Besonders passend sind Einstiegs- und Entwicklungsrollen in Testautomatisierung, Versuch,
-                Systems Engineering, mechatronischer Entwicklung, technischer Datenanalyse sowie in
-                energie- und nachhaltigkeitsbezogenen Engineering-Anwendungen.
-              </p>
-              <div class="contact-list">
-                <a class="contact-link" href="mailto:deno.feuerriegel@gmail.com">
-                  <span><strong>E-Mail</strong><br />deno.feuerriegel@gmail.com</span>
-                  <span>↗</span>
-                </a>
-                <a class="contact-link" href="https://www.linkedin.com/in/deno-feuerriegel/" target="_blank" rel="noreferrer">
-                  <span><strong>LinkedIn</strong><br />linkedin.com/in/deno-feuerriegel</span>
-                  <span>↗</span>
-                </a>
-                <a class="contact-link" href="./Deno_Feuerriegel_CV.pdf" target="_blank" rel="noreferrer">
-                  <span><strong>CV Download</strong><br />PDF-Datei im Projektordner hinterlegen</span>
-                  <span>↗</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="contact-card reveal">
-              <h3>Kurzprofil</h3>
-              <p class="muted">
-                Maschinenbauingenieur mit handwerklich-praktischer Basis, Erfahrung in Fahrzeug- und
-                Antriebsvalidierung, fundierter Nähe zu Software- und Automatisierungsthemen und klarem Ausbau
-                in Richtung datengetriebener sowie nachhaltiger technischer Systeme.
-              </p>
-              <div class="quote-box" style="margin-top: 4px;">
-                <h3>Ich suche Aufgaben, in denen technische Systeme nicht nur gebaut oder berechnet, sondern auch intelligent validiert, automatisiert und weiterentwickelt werden.</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        © <span id="year"></span> Deno Feuerriegel · Built for GitHub Pages
-      </div>
+    <footer>
+        <p>Deno Feuerriegel // Ingenieur aus Leidenschaft</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">&copy; 2026</p>
     </footer>
 
     <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.14 });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-      const tabs = document.querySelectorAll('[data-filter]');
-      const projects = document.querySelectorAll('[data-project]');
-
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          tabs.forEach((btn) => btn.classList.remove('active'));
-          tab.classList.add('active');
-          const filter = tab.dataset.filter;
-
-          projects.forEach((card) => {
-            const tags = card.dataset.project.split(' ');
-            const show = filter === 'all' || tags.includes(filter);
-            card.classList.toggle('hidden', !show);
-          });
-        });
-      });
-
-      document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-  </body>
+</body>
 </html>
