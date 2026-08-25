@@ -1,1 +1,1 @@
-(denofeuerriegel.github.io)[denofeuerriegel.github.io21]
+[website](denofeuerriegel.github.io)
