@@ -13,9 +13,9 @@
 
     <style>
 
-        /* ========================================
+        /* =========================================================
            THEME
-        ======================================== */
+        ========================================================= */
 
         :root {
             --bg: #f7f7f5;
@@ -60,9 +60,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            BASE
-        ======================================== */
+        ========================================================= */
 
         * {
             box-sizing: border-box;
@@ -103,9 +103,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            NAVIGATION
-        ======================================== */
+        ========================================================= */
 
         nav {
             border-bottom: 1px solid var(--border);
@@ -157,10 +157,15 @@
             text-decoration: none;
 
             cursor: pointer;
+
+            transition:
+                border-color .15s ease,
+                background-color .15s ease;
         }
 
         .nav-button:hover {
-            border-color: var(--muted);
+            border-color: var(--accent);
+            background: var(--icon-bg);
         }
 
         .nav-button svg {
@@ -170,26 +175,25 @@
 
         #theme-toggle {
             width: 38px;
-
             padding: 0;
         }
 
 
-        /* ========================================
+        /* =========================================================
            HERO
-        ======================================== */
+        ========================================================= */
 
         header {
-            padding: 62px 0 58px;
+            padding: 62px 0 56px;
         }
 
         .hero-grid {
             display: grid;
 
             grid-template-columns:
-                minmax(0, 1fr) 155px;
+                minmax(0, 1fr) 150px;
 
-            gap: 55px;
+            gap: 48px;
 
             align-items: center;
         }
@@ -233,10 +237,11 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            PROFILE PHOTO
-           Original image: 683 x 1024
-        ======================================== */
+           Source: bild.jpg
+           Native size: 683 x 1024 px
+        ========================================================= */
 
         .profile {
             display: flex;
@@ -248,11 +253,7 @@
         }
 
         .portrait {
-            width: 145px;
-
-            /*
-               Keeps the original 683x1024 ratio.
-            */
+            width: 132px;
 
             aspect-ratio: 683 / 1024;
 
@@ -271,17 +272,10 @@
             display: block;
 
             object-fit: cover;
-
-            /*
-               Slightly towards the top because
-               this is a portrait photograph.
-            */
-
-            object-position: center 30%;
         }
 
         .profile-caption {
-            width: 145px;
+            width: 132px;
 
             color: var(--muted);
 
@@ -291,9 +285,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            SECTIONS
-        ======================================== */
+        ========================================================= */
 
         section {
             padding: 46px 0;
@@ -320,9 +314,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            EXPERIENCE
-        ======================================== */
+        ========================================================= */
 
         .job {
             display: grid;
@@ -371,6 +365,7 @@
         .company-wrap {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
 
             gap: 8px;
 
@@ -390,6 +385,35 @@
             gap: 7px;
         }
 
+
+        /* =========================================================
+           COMPANY LOGOS
+        ========================================================= */
+
+        .company-logo-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            transition:
+                opacity .15s ease,
+                transform .15s ease;
+        }
+
+        .company-logo-link:hover {
+            opacity: .7;
+            transform: translateY(-1px);
+        }
+
+        .company-logo-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
         .company-logo {
             width: 25px;
             height: 25px;
@@ -400,7 +424,7 @@
         }
 
         .company-logo.audi {
-            width: 38px;
+            width: 39px;
             height: 23px;
         }
 
@@ -421,9 +445,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            SELECTED WORK
-        ======================================== */
+        ========================================================= */
 
         .projects {
             display: grid;
@@ -468,6 +492,8 @@
             color: var(--muted);
 
             font-size: .82rem;
+
+            line-height: 1.55;
         }
 
         .project .keywords {
@@ -475,9 +501,9 @@
         }
 
 
-        /* ========================================
-           SKILLS + EDUCATION
-        ======================================== */
+        /* =========================================================
+           LOWER GRID
+        ========================================================= */
 
         .two-columns {
             display: grid;
@@ -503,9 +529,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            TOOL PILLS
-        ======================================== */
+        ========================================================= */
 
         .tool-list {
             display: flex;
@@ -528,27 +554,57 @@
             border-radius: 7px;
 
             background: var(--surface);
-
             color: var(--muted);
 
             font-size: .77rem;
+
+            text-decoration: none;
+
+            transition:
+                border-color .15s ease,
+                background-color .15s ease,
+                transform .15s ease;
         }
 
 
-        /* ========================================
-           ICON + TEXT
-           Logo itself has NO name
-        ======================================== */
+        /*
+           Only linked tools get hover feedback.
+        */
+
+        a.tool {
+            cursor: pointer;
+        }
+
+        a.tool:hover {
+            border-color: var(--accent);
+
+            background: var(--icon-bg);
+
+            transform: translateY(-1px);
+        }
+
+        a.tool:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+
+        /* =========================================================
+           ICON + TEXT LOGOS
+
+           Used where the source image does NOT already
+           contain the program name.
+        ========================================================= */
 
         .tool-icon {
             width: 26px;
             height: 26px;
 
+            flex: 0 0 26px;
+
             display: inline-flex;
             align-items: center;
             justify-content: center;
-
-            flex: 0 0 26px;
 
             overflow: hidden;
         }
@@ -575,10 +631,22 @@
         }
 
 
-        /* ========================================
+        /*
+           DiagRA logo benefits from slightly more space.
+        */
+
+        .tool-icon.diagra img {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        /* =========================================================
            WORDMARK LOGOS
-           Name is already inside the image
-        ======================================== */
+
+           No duplicate text is added because the
+           software name is already part of the image.
+        ========================================================= */
 
         .tool.wordmark {
             padding: 5px 9px;
@@ -590,51 +658,48 @@
             display: block;
 
             width: auto;
+            height: 25px;
 
             max-width: 82px;
-            height: 25px;
 
             object-fit: contain;
         }
 
-        /*
-           Individual widths because
-           the source logos have very
-           different aspect ratios.
-        */
-
         .wordmark-img.arduino {
-            max-width: 66px;
-        }
-
-        .wordmark-img.git {
-            max-width: 58px;
-        }
-
-        .wordmark-img.ros {
-            max-width: 64px;
-        }
-
-        .wordmark-img.kicad {
-            max-width: 67px;
-        }
-
-        .wordmark-img.etas {
             max-width: 68px;
         }
 
+        .wordmark-img.git {
+            max-width: 59px;
+        }
+
+        .wordmark-img.ros {
+            max-width: 66px;
+        }
+
+        .wordmark-img.kicad {
+            max-width: 70px;
+        }
+
+        .wordmark-img.etas {
+            max-width: 70px;
+        }
+
         .wordmark-img.creo {
-            max-width: 74px;
+            max-width: 78px;
         }
 
         .wordmark-img.windchill {
-            max-width: 92px;
+            width: 94px;
+            max-width: 94px;
+
             height: 23px;
         }
 
+
         /*
-           ODIS artwork contains the name
-           and therefore gets more width.
+           ODIS contains substantially more artwork/text,
+           therefore it gets its own width.
         */
 
         .tool.wordmark.odis {
@@ -643,8 +708,8 @@
         }
 
         .wordmark-img.odis {
-            width: 100px;
-            max-width: 100px;
+            width: 108px;
+            max-width: 108px;
 
             height: 29px;
 
@@ -652,9 +717,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            EDUCATION
-        ======================================== */
+        ========================================================= */
 
         .degree {
             margin-bottom: 22px;
@@ -693,9 +758,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            FOOTER
-        ======================================== */
+        ========================================================= */
 
         footer {
             padding: 28px 0;
@@ -708,9 +773,9 @@
         }
 
 
-        /* ========================================
+        /* =========================================================
            MOBILE
-        ======================================== */
+        ========================================================= */
 
         @media (max-width: 700px) {
 
@@ -759,7 +824,14 @@
             }
 
             .job-top {
-                align-items: flex-start;
+                display: block;
+            }
+
+            .company-wrap {
+                justify-content: flex-start;
+
+                margin-top: 4px;
+                margin-bottom: 5px;
             }
 
             .projects {
@@ -790,9 +862,9 @@
 <body>
 
 
-<!-- ========================================
+<!-- =========================================================
      NAVIGATION
-========================================= -->
+========================================================= -->
 
 <nav>
 
@@ -805,14 +877,22 @@
 
         <div class="nav-actions">
 
+
+            <!-- LinkedIn -->
+
             <a
                 class="nav-button"
                 href="https://www.linkedin.com/in/deno-feuerriegel"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
             >
 
-                <svg viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
                     <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V8.98H7.1v11.47z"/>
                 </svg>
 
@@ -823,9 +903,13 @@
             </a>
 
 
+            <!-- Mail -->
+
             <a
                 class="nav-button"
                 href="mailto:deno.feuerriegel@gmail.com"
+                aria-label="Email"
+                title="Email"
             >
 
                 <svg
@@ -852,14 +936,18 @@
             </a>
 
 
+            <!-- Theme -->
+
             <button
                 class="nav-button"
                 id="theme-toggle"
                 type="button"
                 aria-label="Toggle light and dark mode"
+                title="Toggle light / dark mode"
             >
                 ◐
             </button>
+
 
         </div>
 
@@ -869,13 +957,14 @@
 
 
 
-<!-- ========================================
+<!-- =========================================================
      HERO
-========================================= -->
+========================================================= -->
 
 <header>
 
     <div class="container hero-grid">
+
 
         <div class="hero-copy">
 
@@ -917,15 +1006,16 @@
 
         </aside>
 
+
     </div>
 
 </header>
 
 
 
-<!-- ========================================
+<!-- =========================================================
      EXPERIENCE
-========================================= -->
+========================================================= -->
 
 <section>
 
@@ -938,6 +1028,8 @@
 
         <div>
 
+
+            <!-- Projassment -->
 
             <div class="job">
 
@@ -968,7 +1060,7 @@
 
                     <div class="keywords">
                         System Integration · PCB Development ·
-                        Sensors · Prototype Bring-Up
+                        Sensor Integration · Prototype Bring-Up
                     </div>
 
                 </div>
@@ -976,6 +1068,8 @@
             </div>
 
 
+
+            <!-- Volkswagen -->
 
             <div class="job">
 
@@ -998,11 +1092,24 @@
                                 Volkswagen AG
                             </span>
 
-                            <img
-                                class="company-logo"
-                                src="volkswagen.svg"
-                                alt="Volkswagen"
+
+                            <a
+                                class="company-logo-link"
+                                href="https://www.volkswagen-group.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Volkswagen"
+                                aria-label="Volkswagen website"
                             >
+
+                                <img
+                                    class="company-logo"
+                                    src="volkswagen.svg"
+                                    alt="Volkswagen"
+                                >
+
+                            </a>
+
 
                         </div>
 
@@ -1025,6 +1132,8 @@
             </div>
 
 
+
+            <!-- CoTec -->
 
             <div class="job">
 
@@ -1062,6 +1171,8 @@
 
 
 
+            <!-- Kuhn + Witte -->
+
             <div class="job">
 
                 <div class="date">
@@ -1083,19 +1194,45 @@
                                 Kuhn + Witte
                             </span>
 
+
                             <div class="company-logos">
 
-                                <img
-                                    class="company-logo"
-                                    src="volkswagen.svg"
-                                    alt="Volkswagen"
+
+                                <a
+                                    class="company-logo-link"
+                                    href="https://www.volkswagen.de/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Volkswagen"
+                                    aria-label="Volkswagen website"
                                 >
 
-                                <img
-                                    class="company-logo audi"
-                                    src="audi.svg"
-                                    alt="Audi"
+                                    <img
+                                        class="company-logo"
+                                        src="volkswagen.svg"
+                                        alt="Volkswagen"
+                                    >
+
+                                </a>
+
+
+                                <a
+                                    class="company-logo-link"
+                                    href="https://www.audi.de/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Audi"
+                                    aria-label="Audi website"
                                 >
+
+                                    <img
+                                        class="company-logo audi"
+                                        src="audi.svg"
+                                        alt="Audi"
+                                    >
+
+                                </a>
+
 
                             </div>
 
@@ -1126,9 +1263,9 @@
 
 
 
-<!-- ========================================
+<!-- =========================================================
      SELECTED WORK
-========================================= -->
+========================================================= -->
 
 <section>
 
@@ -1141,6 +1278,8 @@
 
         <div class="projects">
 
+
+            <!-- Master Thesis -->
 
             <article class="project">
 
@@ -1167,6 +1306,8 @@
 
 
 
+            <!-- Bachelor Thesis -->
+
             <article class="project">
 
                 <div class="project-meta">
@@ -1191,6 +1332,35 @@
 
 
 
+            <!-- Robotics -->
+
+            <article class="project">
+
+                <div class="project-meta">
+                    B.Sc. Project · Autonomous Robotics
+                </div>
+
+                <h3>
+                    ROS-Based SLAM & Navigation
+                </h3>
+
+                <p>
+                    Integration and configuration of a SLAM system
+                    for a Mecanum-wheel mobile robot using LiDAR,
+                    ROS and hector_slam, including navigation,
+                    path planning and obstacle avoidance.
+                </p>
+
+                <div class="keywords">
+                    ROS · SLAM · LiDAR · Autonomous Systems
+                </div>
+
+            </article>
+
+
+
+            <!-- Wind farm -->
+
             <article class="project">
 
                 <div class="project-meta">
@@ -1214,6 +1384,8 @@
             </article>
 
 
+
+            <!-- PID -->
 
             <article class="project">
 
@@ -1247,16 +1419,18 @@
 
 
 
-<!-- ========================================
+<!-- =========================================================
      SKILLS + EDUCATION
-========================================= -->
+========================================================= -->
 
 <section>
 
     <div class="container two-columns">
 
 
-        <!-- TECHNICAL SKILLS -->
+        <!-- =====================================================
+             TECHNICAL SKILLS
+        ====================================================== -->
 
         <div>
 
@@ -1277,51 +1451,67 @@
                     Software & Programming
                 </h3>
 
+
                 <div class="tool-list">
 
 
-                    <!-- Python = icon only, add name -->
+                    <!-- Python: symbol + text -->
 
-                    <div class="tool">
+                    <a
+                        class="tool"
+                        href="https://www.python.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Python"
+                    >
 
                         <span class="tool-icon">
 
                             <img
                                 src="python.svg"
-                                alt=""
+                                alt="Python logo"
                             >
 
                         </span>
 
                         Python
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- MATLAB = icon only, add name -->
+                    <!-- MATLAB: symbol + text -->
 
-                    <div class="tool">
+                    <a
+                        class="tool"
+                        href="https://www.mathworks.com/products/matlab.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="MATLAB / Simulink"
+                    >
 
                         <span class="tool-icon">
 
                             <img
                                 src="matlab.png"
-                                alt=""
+                                alt="MATLAB logo"
                             >
 
                         </span>
 
                         MATLAB / Simulink
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- Git already contains its name -->
+                    <!-- Git: image already includes its name -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://git-scm.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="Git"
                     >
 
@@ -1331,13 +1521,16 @@
                             alt="Git"
                         >
 
-                    </div>
+                    </a>
 
 
 
                     <!-- Structured Text -->
 
-                    <div class="tool">
+                    <div
+                        class="tool"
+                        title="Structured Text / IEC 61131-3"
+                    >
 
                         <span class="tool-icon">
 
@@ -1372,13 +1565,17 @@
                     Embedded & Electronics
                 </h3>
 
+
                 <div class="tool-list">
 
 
                     <!-- Arduino wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://www.arduino.cc/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="Arduino"
                     >
 
@@ -1388,15 +1585,18 @@
                             alt="Arduino"
                         >
 
-                    </div>
+                    </a>
 
 
 
                     <!-- ROS wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
-                        title="ROS"
+                        href="https://www.ros.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Robot Operating System"
                     >
 
                         <img
@@ -1405,14 +1605,17 @@
                             alt="ROS"
                         >
 
-                    </div>
+                    </a>
 
 
 
                     <!-- KiCad wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://www.kicad.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="KiCad"
                     >
 
@@ -1422,24 +1625,34 @@
                             alt="KiCad"
                         >
 
-                    </div>
+                    </a>
 
 
 
-                    <div class="tool">
+                    <!-- LTspice -->
+
+                    <a
+                        class="tool"
+                        href="https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="LTspice"
+                    >
 
                         <span class="tool-icon">
 
                             <svg viewBox="0 0 24 24">
+
                                 <path d="M3 12h4"/>
                                 <path d="M7 12c2-7 4 7 6 0s4 7 8 0"/>
+
                             </svg>
 
                         </span>
 
                         LTspice
 
-                    </div>
+                    </a>
 
 
                 </div>
@@ -1456,10 +1669,16 @@
                     Vehicle & Validation
                 </h3>
 
+
                 <div class="tool-list">
 
 
-                    <div class="tool">
+                    <!-- HIL -->
+
+                    <div
+                        class="tool"
+                        title="Hardware-in-the-Loop"
+                    >
 
                         <span class="tool-icon">
 
@@ -1489,10 +1708,13 @@
 
 
 
-                    <!-- ETAS already says ETAS -->
+                    <!-- ETAS wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://www.etas.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="ETAS"
                     >
 
@@ -1502,47 +1724,61 @@
                             alt="ETAS"
                         >
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- DiagRA is only a D icon -->
+                    <!-- DiagRA symbol + text -->
 
-                    <div class="tool">
+                    <a
+                        class="tool"
+                        href="https://www.rac.de/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="DiagRA D by RA Consulting"
+                    >
 
-                        <span class="tool-icon">
+                        <span class="tool-icon diagra">
 
                             <img
-                                src="diagra_d.jpg"
-                                alt=""
+                                src="diagra_d.png"
+                                alt="DiagRA D logo"
                             >
 
                         </span>
 
                         DiagRA
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- ODIS artwork already contains its name -->
+                    <!-- ODIS graphic already includes name -->
 
-                    <div
+                    <a
                         class="tool wordmark odis"
-                        title="ODIS"
+                        href="https://erwin.vwgroup-datahub.com/odis-requirements"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Volkswagen ODIS Service"
                     >
 
                         <img
                             class="wordmark-img odis"
-                            src="odis.jpg"
+                            src="odis.png"
                             alt="ODIS"
                         >
 
-                    </div>
+                    </a>
 
 
 
-                    <div class="tool">
+                    <!-- CAN -->
+
+                    <div
+                        class="tool"
+                        title="Controller Area Network"
+                    >
 
                         <span class="tool-icon">
 
@@ -1565,7 +1801,12 @@
 
 
 
-                    <div class="tool">
+                    <!-- LIN -->
+
+                    <div
+                        class="tool"
+                        title="Local Interconnect Network"
+                    >
 
                         <span class="tool-icon">
 
@@ -1592,7 +1833,7 @@
 
 
 
-            <!-- ENGINEERING -->
+            <!-- CAD / PLM -->
 
             <div class="group">
 
@@ -1600,13 +1841,17 @@
                     CAD, PLM & Engineering
                 </h3>
 
+
                 <div class="tool-list">
 
 
-                    <!-- Creo already contains name -->
+                    <!-- Creo wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://www.ptc.com/en/products/creo"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="PTC Creo"
                     >
 
@@ -1616,33 +1861,42 @@
                             alt="PTC Creo"
                         >
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- Fusion icon does not clearly contain full name -->
+                    <!-- Fusion: icon + text -->
 
-                    <div class="tool">
+                    <a
+                        class="tool"
+                        href="https://www.autodesk.com/products/fusion-360/overview"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Autodesk Fusion"
+                    >
 
                         <span class="tool-icon">
 
                             <img
                                 src="fusion.svg"
-                                alt=""
+                                alt="Autodesk Fusion logo"
                             >
 
                         </span>
 
                         Fusion
 
-                    </div>
+                    </a>
 
 
 
-                    <!-- Windchill has wordmark -->
+                    <!-- Windchill wordmark -->
 
-                    <div
+                    <a
                         class="tool wordmark"
+                        href="https://www.ptc.com/en/products/windchill"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         title="PTC Windchill"
                     >
 
@@ -1652,11 +1906,19 @@
                             alt="PTC Windchill"
                         >
 
-                    </div>
+                    </a>
 
 
 
-                    <div class="tool">
+                    <!-- ADINA -->
+
+                    <a
+                        class="tool"
+                        href="https://www.bentley.com/software/adina/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="ADINA"
+                    >
 
                         <span class="tool-icon">
 
@@ -1673,7 +1935,7 @@
 
                         ADINA / FEM
 
-                    </div>
+                    </a>
 
 
                 </div>
@@ -1685,7 +1947,9 @@
 
 
 
-        <!-- EDUCATION -->
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
 
         <div>
 
@@ -1695,6 +1959,7 @@
             >
                 Education
             </div>
+
 
 
             <div class="degree">
@@ -1767,15 +2032,16 @@
 
         </div>
 
+
     </div>
 
 </section>
 
 
 
-<!-- ========================================
+<!-- =========================================================
      FOOTER
-========================================= -->
+========================================================= -->
 
 <footer>
 
@@ -1787,9 +2053,9 @@
 
 
 
-<!-- ========================================
+<!-- =========================================================
      THEME SWITCH
-========================================= -->
+========================================================= -->
 
 <script>
 
