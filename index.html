@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -29,9 +28,12 @@
         :root {
             --bg: #f7f7f5;
             --surface: #ffffff;
+
             --text: #202321;
             --muted: #6f7470;
+
             --border: #dadcd8;
+
             --accent: #557462;
             --icon-bg: #eef0ec;
         }
@@ -42,9 +44,12 @@
             :root {
                 --bg: #181a19;
                 --surface: #202321;
+
                 --text: #eeeeeb;
                 --muted: #a4a8a4;
+
                 --border: #373b38;
+
                 --accent: #9eb5a6;
                 --icon-bg: #292d2a;
             }
@@ -55,9 +60,12 @@
         html.light {
             --bg: #f7f7f5;
             --surface: #ffffff;
+
             --text: #202321;
             --muted: #6f7470;
+
             --border: #dadcd8;
+
             --accent: #557462;
             --icon-bg: #eef0ec;
         }
@@ -66,9 +74,12 @@
         html.dark {
             --bg: #181a19;
             --surface: #202321;
+
             --text: #eeeeeb;
             --muted: #a4a8a4;
+
             --border: #373b38;
+
             --accent: #9eb5a6;
             --icon-bg: #292d2a;
         }
@@ -81,6 +92,7 @@
 
         * {
             box-sizing: border-box;
+
             margin: 0;
             padding: 0;
         }
@@ -92,7 +104,6 @@
 
 
         body {
-
             background: var(--bg);
             color: var(--text);
 
@@ -118,7 +129,6 @@
 
 
         .container {
-
             width: min(
                 1050px,
                 calc(100% - 40px)
@@ -140,7 +150,6 @@
 
 
         .nav-inner {
-
             height: 64px;
 
             display: flex;
@@ -152,7 +161,6 @@
 
 
         .brand {
-
             font-size: .95rem;
             font-weight: 650;
 
@@ -161,7 +169,6 @@
 
 
         .nav-actions {
-
             display: flex;
 
             gap: 7px;
@@ -169,7 +176,6 @@
 
 
         .nav-button {
-
             height: 36px;
 
             padding: 0 12px;
@@ -203,7 +209,6 @@
 
 
         .nav-button:hover {
-
             border-color: var(--accent);
 
             background: var(--icon-bg);
@@ -211,14 +216,12 @@
 
 
         .nav-button svg {
-
             width: 15px;
             height: 15px;
         }
 
 
         #theme-toggle {
-
             width: 38px;
 
             padding: 0;
@@ -231,19 +234,16 @@
         ========================================================= */
 
         header {
-
             padding:
                 62px 0 56px;
         }
 
 
         .hero-grid {
-
             display: grid;
 
             grid-template-columns:
-                minmax(0, 1fr)
-                150px;
+                minmax(0, 1fr) 150px;
 
             gap: 48px;
 
@@ -252,13 +252,11 @@
 
 
         .hero-copy {
-
             max-width: 790px;
         }
 
 
         .label {
-
             margin-bottom: 12px;
 
             color: var(--accent);
@@ -273,7 +271,6 @@
 
 
         h1 {
-
             max-width: 780px;
 
             margin-bottom: 20px;
@@ -294,7 +291,6 @@
 
 
         .hero-copy > p {
-
             max-width: 700px;
 
             color: var(--muted);
@@ -305,12 +301,11 @@
 
 
         /* =========================================================
-           PROFILE
-           Original: 683 x 1024
+           PROFILE PHOTO
+           683 × 1024 px
         ========================================================= */
 
         .profile {
-
             display: flex;
             flex-direction: column;
 
@@ -321,7 +316,6 @@
 
 
         .portrait {
-
             width: 132px;
 
             aspect-ratio:
@@ -334,26 +328,23 @@
 
             border-radius: 8px;
 
-            background: var(--surface);
+            background:
+                var(--surface);
         }
 
 
         .portrait img {
-
             width: 100%;
             height: 100%;
 
             display: block;
 
             object-fit: cover;
-
-            object-position:
-                center center;
+            object-position: center;
         }
 
 
         .profile-caption {
-
             width: 132px;
 
             color: var(--muted);
@@ -370,7 +361,6 @@
         ========================================================= */
 
         section {
-
             padding: 46px 0;
 
             border-top:
@@ -379,7 +369,6 @@
 
 
         .layout {
-
             display: grid;
 
             grid-template-columns:
@@ -390,7 +379,6 @@
 
 
         .section-title {
-
             color: var(--muted);
 
             font-size: .76rem;
@@ -408,7 +396,6 @@
         ========================================================= */
 
         .job {
-
             display: grid;
 
             grid-template-columns:
@@ -427,7 +414,6 @@
 
 
         .job:last-child {
-
             padding-bottom: 0;
 
             margin-bottom: 0;
@@ -437,7 +423,6 @@
 
 
         .date {
-
             padding-top: 3px;
 
             color: var(--muted);
@@ -447,7 +432,6 @@
 
 
         .job-top {
-
             display: flex;
 
             justify-content: space-between;
@@ -460,14 +444,12 @@
 
 
         .job h3 {
-
             font-size: 1rem;
             font-weight: 600;
         }
 
 
         .company-wrap {
-
             display: flex;
 
             align-items: center;
@@ -480,7 +462,6 @@
 
 
         .company {
-
             color: var(--accent);
 
             font-size: .83rem;
@@ -488,8 +469,8 @@
 
 
         .company-logos {
-
             display: flex;
+
             align-items: center;
 
             gap: 7px;
@@ -502,15 +483,14 @@
         ========================================================= */
 
         .company-logo-link {
-
             display: inline-flex;
 
             align-items: center;
             justify-content: center;
 
-            border-radius: 4px;
-
             text-decoration: none;
+
+            border-radius: 4px;
 
             transition:
                 opacity .15s ease,
@@ -519,8 +499,7 @@
 
 
         .company-logo-link:hover {
-
-            opacity: .72;
+            opacity: .7;
 
             transform:
                 translateY(-1px);
@@ -528,7 +507,6 @@
 
 
         .company-logo {
-
             width: 25px;
             height: 25px;
 
@@ -539,14 +517,24 @@
 
 
         .company-logo.audi {
-
             width: 39px;
             height: 23px;
         }
 
 
-        .job p {
+        .company-logo.skoda {
+            width: 27px;
+            height: 27px;
+        }
 
+
+        .company-logo.projassment {
+            width: 27px;
+            height: 27px;
+        }
+
+
+        .job p {
             max-width: 680px;
 
             color: var(--muted);
@@ -556,7 +544,6 @@
 
 
         .keywords {
-
             margin-top: 8px;
 
             color: var(--muted);
@@ -571,7 +558,6 @@
         ========================================================= */
 
         .projects {
-
             display: grid;
 
             grid-template-columns:
@@ -585,7 +571,6 @@
 
 
         .project {
-
             padding:
                 18px 0 20px;
 
@@ -595,7 +580,6 @@
 
 
         .project:nth-child(-n+2) {
-
             padding-top: 0;
 
             border-top: none;
@@ -603,7 +587,6 @@
 
 
         .project-meta {
-
             margin-bottom: 5px;
 
             color: var(--accent);
@@ -614,7 +597,6 @@
 
 
         .project h3 {
-
             margin-bottom: 7px;
 
             font-size: .94rem;
@@ -625,7 +607,6 @@
 
 
         .project p {
-
             color: var(--muted);
 
             font-size: .82rem;
@@ -640,7 +621,6 @@
         ========================================================= */
 
         .two-columns {
-
             display: grid;
 
             grid-template-columns:
@@ -651,19 +631,16 @@
 
 
         .group {
-
             margin-bottom: 21px;
         }
 
 
         .group:last-child {
-
             margin-bottom: 0;
         }
 
 
         .group h3 {
-
             margin-bottom: 9px;
 
             font-size: .88rem;
@@ -673,11 +650,10 @@
 
 
         /* =========================================================
-           SKILL PILLS
+           TOOL PILLS
         ========================================================= */
 
         .tool-list {
-
             display: flex;
             flex-wrap: wrap;
 
@@ -686,8 +662,7 @@
 
 
         .tool {
-
-            min-height: 40px;
+            min-height: 38px;
 
             padding: 5px 9px;
 
@@ -717,16 +692,16 @@
 
 
         a.tool {
-
             cursor: pointer;
         }
 
 
         a.tool:hover {
+            border-color:
+                var(--accent);
 
-            border-color: var(--accent);
-
-            background: var(--icon-bg);
+            background:
+                var(--icon-bg);
 
             transform:
                 translateY(-1px);
@@ -735,17 +710,15 @@
 
 
         /* =========================================================
-           NORMAL ICONS
-           Icon + text beside it
+           ICON + TEXT
         ========================================================= */
 
         .tool-icon {
-
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
 
             flex:
-                0 0 28px;
+                0 0 26px;
 
             display: inline-flex;
 
@@ -757,9 +730,8 @@
 
 
         .tool-icon img {
-
-            width: 25px;
-            height: 25px;
+            width: 23px;
+            height: 23px;
 
             display: block;
 
@@ -767,13 +739,17 @@
         }
 
 
-        .tool-icon svg {
+        .tool-icon.diagra img {
+            width: 25px;
+            height: 25px;
+        }
 
+
+        .tool-icon svg {
             width: 19px;
             height: 19px;
 
             stroke: var(--accent);
-
             fill: none;
 
             stroke-width: 1.6;
@@ -783,102 +759,108 @@
         }
 
 
-        .tool-icon.diagra img {
-
-            width: 27px;
-            height: 27px;
-        }
-
-
 
         /* =========================================================
            WORDMARK LOGOS
-           No extra software name next to logo
         ========================================================= */
 
         .tool.wordmark {
-
-            padding:
-                5px 10px;
+            padding: 5px 9px;
 
             gap: 0;
         }
 
 
         .wordmark-img {
-
             display: block;
 
             width: auto;
-            height: 26px;
+            height: 25px;
 
-            max-width: 90px;
+            max-width: 82px;
 
             object-fit: contain;
         }
 
 
         .wordmark-img.arduino {
-
-            max-width: 72px;
+            max-width: 68px;
         }
 
 
         .wordmark-img.git {
-
-            max-width: 64px;
+            max-width: 59px;
         }
 
 
         .wordmark-img.ros {
-
-            max-width: 70px;
+            max-width: 66px;
         }
 
 
         .wordmark-img.kicad {
-
-            max-width: 75px;
+            max-width: 70px;
         }
 
 
         .wordmark-img.etas {
-
-            max-width: 76px;
+            max-width: 70px;
         }
 
 
         .wordmark-img.creo {
-
-            max-width: 82px;
+            max-width: 78px;
         }
 
 
         .wordmark-img.windchill {
+            width: 94px;
+            max-width: 94px;
 
-            width: 100px;
-            max-width: 100px;
+            height: 23px;
+        }
+
+
+        .wordmark-img.codebeamer {
+            width: 112px;
+            max-width: 112px;
 
             height: 25px;
         }
 
 
+        .odis-fallback {
+            display: none;
+            align-items: center;
+            justify-content: center;
 
-        /* ODIS is wider */
+            min-width: 62px;
+            height: 28px;
+
+            padding: 0 8px;
+
+            border-radius: 5px;
+
+            color: #0b4d78;
+            background: #ffffff;
+
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
 
         .tool.wordmark.odis {
-
-            padding:
-                5px 8px;
+            padding-left: 7px;
+            padding-right: 7px;
         }
 
 
         .wordmark-img.odis {
+            width: 108px;
+            max-width: 108px;
 
-            width: 112px;
-            max-width: 112px;
-
-            height: 30px;
+            height: 29px;
 
             object-fit: contain;
         }
@@ -890,19 +872,16 @@
         ========================================================= */
 
         .degree {
-
             margin-bottom: 22px;
         }
 
 
         .degree:last-child {
-
             margin-bottom: 0;
         }
 
 
         .degree-date {
-
             margin-bottom: 3px;
 
             color: var(--accent);
@@ -913,7 +892,6 @@
 
 
         .degree h3 {
-
             margin-bottom: 3px;
 
             font-size: .9rem;
@@ -922,7 +900,6 @@
 
 
         .degree p {
-
             color: var(--muted);
 
             font-size: .82rem;
@@ -930,7 +907,6 @@
 
 
         .grade {
-
             color: var(--text);
 
             font-weight: 550;
@@ -943,7 +919,6 @@
         ========================================================= */
 
         footer {
-
             padding: 28px 0;
 
             border-top:
@@ -963,21 +938,18 @@
         @media (max-width: 700px) {
 
             .container {
-
                 width:
                     calc(100% - 28px);
             }
 
 
             header {
-
                 padding:
                     48px 0;
             }
 
 
             .hero-grid {
-
                 grid-template-columns:
                     1fr;
 
@@ -986,20 +958,17 @@
 
 
             .profile {
-
                 align-items:
                     flex-start;
             }
 
 
             .portrait {
-
                 width: 115px;
             }
 
 
             .profile-caption {
-
                 width: 115px;
 
                 text-align: left;
@@ -1007,14 +976,12 @@
 
 
             section {
-
                 padding:
                     40px 0;
             }
 
 
             .layout {
-
                 grid-template-columns:
                     1fr;
 
@@ -1023,7 +990,6 @@
 
 
             .job {
-
                 grid-template-columns:
                     1fr;
 
@@ -1032,13 +998,11 @@
 
 
             .job-top {
-
                 display: block;
             }
 
 
             .company-wrap {
-
                 justify-content:
                     flex-start;
 
@@ -1048,14 +1012,12 @@
 
 
             .projects {
-
                 grid-template-columns:
                     1fr;
             }
 
 
             .project:nth-child(2) {
-
                 padding-top: 18px;
 
                 border-top:
@@ -1064,7 +1026,6 @@
 
 
             .two-columns {
-
                 grid-template-columns:
                     1fr;
 
@@ -1073,7 +1034,6 @@
 
 
             .nav-text {
-
                 display: none;
             }
 
@@ -1084,9 +1044,7 @@
 </head>
 
 
-
 <body>
-
 
 
 <!-- =========================================================
@@ -1096,7 +1054,6 @@
 <nav>
 
     <div class="container nav-inner">
-
 
         <a
             href="#"
@@ -1121,11 +1078,7 @@
                     viewBox="0 0 24 24"
                     fill="currentColor"
                 >
-
-                    <path
-                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V8.98H7.1v11.47z"
-                    />
-
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V8.98H7.1v11.47z"/>
                 </svg>
 
                 <span class="nav-text">
@@ -1176,7 +1129,6 @@
                 id="theme-toggle"
                 type="button"
                 title="Toggle light / dark mode"
-                aria-label="Toggle light and dark mode"
             >
                 ◐
             </button>
@@ -1201,7 +1153,6 @@
 
         <div class="hero-copy">
 
-
             <div class="label">
                 Mechanical Engineering · Systems Integration
             </div>
@@ -1220,13 +1171,11 @@
                 integration.
             </p>
 
-
         </div>
 
 
 
         <aside class="profile">
-
 
             <div class="portrait">
 
@@ -1243,7 +1192,6 @@
             <div class="profile-caption">
                 Hamburg, Germany
             </div>
-
 
         </aside>
 
@@ -1262,7 +1210,6 @@
 
     <div class="container layout">
 
-
         <div class="section-title">
             Experience
         </div>
@@ -1271,11 +1218,9 @@
         <div>
 
 
-
             <!-- Projassment -->
 
             <div class="job">
-
 
                 <div class="date">
                     05/2025 — Present
@@ -1284,19 +1229,32 @@
 
                 <div>
 
-
                     <div class="job-top">
-
 
                         <h3>
                             Product Development / UAV Systems
                         </h3>
 
+                        <div class="company-wrap">
 
-                        <span class="company">
-                            Projassment
-                        </span>
+                            <span class="company">
+                                Projassment
+                            </span>
 
+                            <span
+                                class="company-logo-link"
+                                title="Projassment"
+                            >
+
+                                <img
+                                    class="company-logo projassment"
+                                    src="./assets/brands/projassment.png"
+                                    alt="Projassment"
+                                >
+
+                            </span>
+
+                        </div>
 
                     </div>
 
@@ -1314,9 +1272,7 @@
                         Sensor Integration · Prototype Bring-Up
                     </div>
 
-
                 </div>
-
 
             </div>
 
@@ -1326,7 +1282,6 @@
 
             <div class="job">
 
-
                 <div class="date">
                     03/2024 — 02/2025
                 </div>
@@ -1334,9 +1289,7 @@
 
                 <div>
 
-
                     <div class="job-top">
-
 
                         <h3>
                             Powertrain Software Development
@@ -1344,7 +1297,6 @@
 
 
                         <div class="company-wrap">
-
 
                             <span class="company">
                                 Volkswagen AG
@@ -1370,7 +1322,6 @@
 
                         </div>
 
-
                     </div>
 
 
@@ -1387,9 +1338,7 @@
                         Test Automation · Root-Cause Analysis
                     </div>
 
-
                 </div>
-
 
             </div>
 
@@ -1399,7 +1348,6 @@
 
             <div class="job">
 
-
                 <div class="date">
                     11/2021 — 02/2024
                 </div>
@@ -1407,19 +1355,15 @@
 
                 <div>
 
-
                     <div class="job-top">
-
 
                         <h3>
                             Vehicle Testing / ADAS Validation
                         </h3>
 
-
                         <span class="company">
                             CoTec
                         </span>
-
 
                     </div>
 
@@ -1435,9 +1379,7 @@
                         Vehicle Testing · ADAS · Validation
                     </div>
 
-
                 </div>
-
 
             </div>
 
@@ -1447,7 +1389,6 @@
 
             <div class="job">
 
-
                 <div class="date">
                     08/2017 — 01/2021
                 </div>
@@ -1455,9 +1396,7 @@
 
                 <div>
 
-
                     <div class="job-top">
-
 
                         <h3>
                             Automotive Mechatronics Technician
@@ -1465,7 +1404,6 @@
 
 
                         <div class="company-wrap">
-
 
                             <span class="company">
                                 Kuhn + Witte
@@ -1492,6 +1430,7 @@
                                 </a>
 
 
+
                                 <a
                                     class="company-logo-link"
                                     href="https://www.audi.de/"
@@ -1509,11 +1448,26 @@
                                 </a>
 
 
+                                <a
+                                    class="company-logo-link"
+                                    href="https://www.skoda-auto.de/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Škoda"
+                                >
+
+                                    <img
+                                        class="company-logo skoda"
+                                        src="./assets/brands/skoda.svg"
+                                        alt="Škoda"
+                                    >
+
+                                </a>
+
+
                             </div>
 
-
                         </div>
-
 
                     </div>
 
@@ -1529,15 +1483,12 @@
                         Diagnostics · ODIS · CAN / LIN · Vehicle E/E
                     </div>
 
-
                 </div>
-
 
             </div>
 
 
         </div>
-
 
     </div>
 
@@ -1553,7 +1504,6 @@
 
     <div class="container layout">
 
-
         <div class="section-title">
             Selected Work
         </div>
@@ -1562,20 +1512,18 @@
         <div class="projects">
 
 
+            <!-- Master Thesis -->
 
             <article class="project">
-
 
                 <div class="project-meta">
                     M.Sc. Thesis · Current
                 </div>
 
-
                 <h3>
                     Technical Deployment System
                     for Seagrass Restoration
                 </h3>
-
 
                 <p>
                     Development and evaluation of technical concepts
@@ -1583,28 +1531,25 @@
                     planting material in the Baltic Sea.
                 </p>
 
-
                 <div class="keywords">
                     Product Development · System Design · Automation
                 </div>
-
 
             </article>
 
 
 
-            <article class="project">
+            <!-- Bachelor Thesis -->
 
+            <article class="project">
 
                 <div class="project-meta">
                     B.Sc. Thesis · Volkswagen AG
                 </div>
 
-
                 <h3>
                     Automated HIL Software Commissioning
                 </h3>
-
 
                 <p>
                     Development of an end-to-end toolchain for automated
@@ -1612,28 +1557,25 @@
                     on a Hardware-in-the-Loop test bench.
                 </p>
 
-
                 <div class="keywords">
                     HIL · Test Automation · Software Validation
                 </div>
-
 
             </article>
 
 
 
-            <article class="project">
+            <!-- Robotics -->
 
+            <article class="project">
 
                 <div class="project-meta">
                     B.Sc. Project · Autonomous Robotics
                 </div>
 
-
                 <h3>
                     ROS-Based SLAM & Navigation
                 </h3>
-
 
                 <p>
                     Integration and configuration of a SLAM system
@@ -1642,28 +1584,25 @@
                     path planning and obstacle avoidance.
                 </p>
 
-
                 <div class="keywords">
                     ROS · SLAM · LiDAR · Autonomous Systems
                 </div>
-
 
             </article>
 
 
 
-            <article class="project">
+            <!-- Wind Farm -->
 
+            <article class="project">
 
                 <div class="project-meta">
                     M.Sc. Project · Grade 0.7
                 </div>
 
-
                 <h3>
                     Wind Farm Power Curve & Forecasting
                 </h3>
-
 
                 <p>
                     Analysis of operational and weather data and
@@ -1671,28 +1610,25 @@
                     R² &gt; 0.85 for a 12.6 MW wind farm.
                 </p>
 
-
                 <div class="keywords">
                     MATLAB · Data Analysis · Machine Learning
                 </div>
-
 
             </article>
 
 
 
-            <article class="project">
+            <!-- PID -->
 
+            <article class="project">
 
                 <div class="project-meta">
                     B.Sc. Project · Grade 0.7
                 </div>
 
-
                 <h3>
                     Digital PID Control Laboratory
                 </h3>
-
 
                 <p>
                     Design and implementation of a digital controller
@@ -1701,17 +1637,14 @@
                     the practical module curriculum.
                 </p>
 
-
                 <div class="keywords">
                     Arduino · KiCad · LTspice · Control Engineering
                 </div>
-
 
             </article>
 
 
         </div>
-
 
     </div>
 
@@ -1728,13 +1661,11 @@
     <div class="container two-columns">
 
 
-
         <!-- =====================================================
              TECHNICAL SKILLS
         ====================================================== -->
 
         <div>
-
 
             <div
                 class="section-title"
@@ -1745,10 +1676,9 @@
 
 
 
-            <!-- Software & Programming -->
+            <!-- SOFTWARE -->
 
             <div class="group">
-
 
                 <h3>
                     Software & Programming
@@ -1756,7 +1686,6 @@
 
 
                 <div class="tool-list">
-
 
 
                     <!-- Python -->
@@ -1840,7 +1769,6 @@
 
                             <svg
                                 viewBox="0 0 24 24"
-                                aria-hidden="true"
                             >
 
                                 <path d="M6 5h12"/>
@@ -1860,15 +1788,13 @@
 
                 </div>
 
-
             </div>
 
 
 
-            <!-- Embedded & Electronics -->
+            <!-- EMBEDDED -->
 
             <div class="group">
-
 
                 <h3>
                     Embedded & Electronics
@@ -1876,7 +1802,6 @@
 
 
                 <div class="tool-list">
-
 
 
                     <!-- Arduino -->
@@ -1939,8 +1864,6 @@
 
 
 
-                    <!-- LTspice -->
-
                     <a
                         class="tool"
                         href="https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html"
@@ -1962,18 +1885,42 @@
 
                     </a>
 
+                    <a
+                        class="tool"
+                        href="https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="LTspice"
+                    >
+
+                        <span class="tool-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M3 12h4"/>
+
+                                <path
+                                    d="M7 12c2-7 4 7 6 0s4 7 8 0"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                        LTspice
+
+                    </a>
+
 
                 </div>
-
 
             </div>
 
 
 
-            <!-- Vehicle & Validation -->
+            <!-- VEHICLE -->
 
             <div class="group">
-
 
                 <h3>
                     Vehicle & Validation
@@ -1981,7 +1928,6 @@
 
 
                 <div class="tool-list">
-
 
 
                     <!-- HIL -->
@@ -1993,10 +1939,7 @@
 
                         <span class="tool-icon">
 
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
+                            <svg viewBox="0 0 24 24">
 
                                 <rect
                                     x="4"
@@ -2088,9 +2031,14 @@
 
                         <img
                             class="wordmark-img odis"
-                            src="./assets/icons/odis.png"
+                            src="./assets/icons/odis.png?v=2"
                             alt="ODIS"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
                         >
+
+                        <span class="odis-fallback" aria-hidden="true">
+                            ODIS
+                        </span>
 
                     </a>
 
@@ -2105,10 +2053,7 @@
 
                         <span class="tool-icon">
 
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
+                            <svg viewBox="0 0 24 24">
 
                                 <circle
                                     cx="5"
@@ -2145,10 +2090,7 @@
 
                         <span class="tool-icon">
 
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
+                            <svg viewBox="0 0 24 24">
 
                                 <circle
                                     cx="5"
@@ -2176,15 +2118,13 @@
 
                 </div>
 
-
             </div>
 
 
 
-            <!-- CAD, PLM & Engineering -->
+            <!-- CAD / PLM -->
 
             <div class="group">
-
 
                 <h3>
                     CAD, PLM & Engineering
@@ -2192,7 +2132,6 @@
 
 
                 <div class="tool-list">
-
 
 
                     <!-- Creo -->
@@ -2260,6 +2199,26 @@
 
 
 
+                    <!-- Codebeamer -->
+
+                    <a
+                        class="tool wordmark"
+                        href="https://www.ptc.com/en/products/codebeamer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="PTC Codebeamer"
+                    >
+
+                        <img
+                            class="wordmark-img codebeamer"
+                            src="./assets/icons/codebeamer.png"
+                            alt="PTC Codebeamer"
+                        >
+
+                    </a>
+
+
+
                     <!-- ADINA -->
 
                     <a
@@ -2272,14 +2231,9 @@
 
                         <span class="tool-icon">
 
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
+                            <svg viewBox="0 0 24 24">
 
-                                <path
-                                    d="M4 18l4-12 5 10 3-7 4 9"
-                                />
+                                <path d="M4 18l4-12 5 10 3-7 4 9"/>
 
                                 <path d="M4 18h16"/>
 
@@ -2298,7 +2252,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -2312,7 +2265,6 @@
 
         <div>
 
-
             <div
                 class="section-title"
                 style="margin-bottom: 20px;"
@@ -2323,7 +2275,6 @@
 
 
             <div class="degree">
-
 
                 <div class="degree-date">
                     04/2025 — 12/2026
@@ -2337,9 +2288,7 @@
 
 
                 <p>
-
                     HAW Hamburg
-
                     <br>
 
                     <span class="grade">
@@ -2347,16 +2296,13 @@
                     </span>
 
                     · Expected graduation December 2026
-
                 </p>
-
 
             </div>
 
 
 
             <div class="degree">
-
 
                 <div class="degree-date">
                     03/2021 — 03/2025
@@ -2369,25 +2315,20 @@
 
 
                 <p>
-
                     Digital Engineering & Mobility
                     · HAW Hamburg
-
                     <br>
 
                     <span class="grade">
                         Final grade: 1.5
                     </span>
-
                 </p>
-
 
             </div>
 
 
 
             <div class="degree">
-
 
                 <div class="degree-date">
                     08/2017 — 01/2021
@@ -2404,7 +2345,6 @@
                     <br>
                     Kuhn + Witte
                 </p>
-
 
             </div>
 
@@ -2441,41 +2381,31 @@
     const button =
         document.getElementById("theme-toggle");
 
-
     const root =
         document.documentElement;
-
 
     const saved =
         localStorage.getItem("color-theme");
 
 
     if (saved === "light") {
-
         root.classList.add("light");
-
     }
 
 
     if (saved === "dark") {
-
         root.classList.add("dark");
-
     }
-
 
 
     button.addEventListener(
         "click",
         function () {
 
-
             const systemDark =
-                window
-                    .matchMedia(
-                        "(prefers-color-scheme: dark)"
-                    )
-                    .matches;
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
 
 
             let currentlyDark;
@@ -2489,7 +2419,6 @@
 
             }
 
-
             else if (
                 root.classList.contains("light")
             ) {
@@ -2498,13 +2427,11 @@
 
             }
 
-
             else {
 
                 currentlyDark = systemDark;
 
             }
-
 
 
             root.classList.remove(
@@ -2513,40 +2440,27 @@
             );
 
 
-
             if (currentlyDark) {
 
-
-                root.classList.add(
-                    "light"
-                );
-
+                root.classList.add("light");
 
                 localStorage.setItem(
                     "color-theme",
                     "light"
                 );
 
-
             }
-
 
             else {
 
-
-                root.classList.add(
-                    "dark"
-                );
-
+                root.classList.add("dark");
 
                 localStorage.setItem(
                     "color-theme",
                     "dark"
                 );
 
-
             }
-
 
         }
     );
@@ -2555,5 +2469,4 @@
 
 
 </body>
-
 </html>
