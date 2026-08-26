@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
         content="Deno Feuerriegel – Mechanical Engineer focused on systems integration, vehicle software validation, HIL testing and mechatronic development."
     >
 
-    <title>Deno Feuerriegel | Systems Integration</title>
+    <title>
+        Deno Feuerriegel | Systems Integration
+    </title>
+
 
     <style>
 
@@ -20,44 +28,62 @@
         :root {
             --bg: #f7f7f5;
             --surface: #ffffff;
+
             --text: #202321;
             --muted: #6f7470;
+
             --border: #dadcd8;
+
             --accent: #557462;
             --icon-bg: #eef0ec;
         }
 
+
         @media (prefers-color-scheme: dark) {
+
             :root {
                 --bg: #181a19;
                 --surface: #202321;
+
                 --text: #eeeeeb;
                 --muted: #a4a8a4;
+
                 --border: #373b38;
+
                 --accent: #9eb5a6;
                 --icon-bg: #292d2a;
             }
+
         }
+
 
         html.light {
             --bg: #f7f7f5;
             --surface: #ffffff;
+
             --text: #202321;
             --muted: #6f7470;
+
             --border: #dadcd8;
+
             --accent: #557462;
             --icon-bg: #eef0ec;
         }
 
+
         html.dark {
             --bg: #181a19;
             --surface: #202321;
+
             --text: #eeeeeb;
             --muted: #a4a8a4;
+
             --border: #373b38;
+
             --accent: #9eb5a6;
             --icon-bg: #292d2a;
         }
+
 
 
         /* =========================================================
@@ -66,13 +92,16 @@
 
         * {
             box-sizing: border-box;
+
             margin: 0;
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             background: var(--bg);
@@ -93,14 +122,21 @@
                 color .2s ease;
         }
 
+
         a {
             color: inherit;
         }
 
+
         .container {
-            width: min(1050px, calc(100% - 40px));
+            width: min(
+                1050px,
+                calc(100% - 40px)
+            );
+
             margin: auto;
         }
+
 
 
         /* =========================================================
@@ -108,8 +144,10 @@
         ========================================================= */
 
         nav {
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
         }
+
 
         .nav-inner {
             height: 64px;
@@ -121,6 +159,7 @@
             gap: 20px;
         }
 
+
         .brand {
             font-size: .95rem;
             font-weight: 650;
@@ -128,17 +167,22 @@
             text-decoration: none;
         }
 
+
         .nav-actions {
             display: flex;
+
             gap: 7px;
         }
+
 
         .nav-button {
             height: 36px;
 
             padding: 0 12px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 6px;
 
             background: var(--surface);
@@ -163,20 +207,26 @@
                 background-color .15s ease;
         }
 
+
         .nav-button:hover {
             border-color: var(--accent);
+
             background: var(--icon-bg);
         }
+
 
         .nav-button svg {
             width: 15px;
             height: 15px;
         }
 
+
         #theme-toggle {
             width: 38px;
+
             padding: 0;
         }
+
 
 
         /* =========================================================
@@ -184,8 +234,10 @@
         ========================================================= */
 
         header {
-            padding: 62px 0 56px;
+            padding:
+                62px 0 56px;
         }
+
 
         .hero-grid {
             display: grid;
@@ -198,9 +250,11 @@
             align-items: center;
         }
 
+
         .hero-copy {
             max-width: 790px;
         }
+
 
         .label {
             margin-bottom: 12px;
@@ -211,8 +265,10 @@
             font-weight: 600;
 
             text-transform: uppercase;
+
             letter-spacing: .06em;
         }
+
 
         h1 {
             max-width: 780px;
@@ -220,13 +276,19 @@
             margin-bottom: 20px;
 
             font-size:
-                clamp(2.5rem, 6vw, 4.25rem);
+                clamp(
+                    2.5rem,
+                    6vw,
+                    4.25rem
+                );
 
             font-weight: 550;
 
             line-height: 1.04;
+
             letter-spacing: -.045em;
         }
+
 
         .hero-copy > p {
             max-width: 700px;
@@ -237,10 +299,10 @@
         }
 
 
+
         /* =========================================================
            PROFILE PHOTO
-           Source: bild.jpg
-           Native size: 683 x 1024 px
+           683 × 1024 px
         ========================================================= */
 
         .profile {
@@ -252,18 +314,24 @@
             gap: 8px;
         }
 
+
         .portrait {
             width: 132px;
 
-            aspect-ratio: 683 / 1024;
+            aspect-ratio:
+                683 / 1024;
 
             overflow: hidden;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 8px;
 
-            background: var(--surface);
+            background:
+                var(--surface);
         }
+
 
         .portrait img {
             width: 100%;
@@ -272,7 +340,9 @@
             display: block;
 
             object-fit: cover;
+            object-position: center;
         }
+
 
         .profile-caption {
             width: 132px;
@@ -285,6 +355,7 @@
         }
 
 
+
         /* =========================================================
            SECTIONS
         ========================================================= */
@@ -292,16 +363,20 @@
         section {
             padding: 46px 0;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
         }
+
 
         .layout {
             display: grid;
 
-            grid-template-columns: 150px 1fr;
+            grid-template-columns:
+                150px 1fr;
 
             gap: 30px;
         }
+
 
         .section-title {
             color: var(--muted);
@@ -310,8 +385,10 @@
             font-weight: 600;
 
             text-transform: uppercase;
+
             letter-spacing: .07em;
         }
+
 
 
         /* =========================================================
@@ -321,22 +398,29 @@
         .job {
             display: grid;
 
-            grid-template-columns: 120px 1fr;
+            grid-template-columns:
+                120px 1fr;
 
             gap: 22px;
 
-            padding: 0 0 24px;
+            padding:
+                0 0 24px;
+
             margin-bottom: 24px;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
         }
+
 
         .job:last-child {
             padding-bottom: 0;
+
             margin-bottom: 0;
 
             border-bottom: none;
         }
+
 
         .date {
             padding-top: 3px;
@@ -345,6 +429,7 @@
 
             font-size: .78rem;
         }
+
 
         .job-top {
             display: flex;
@@ -357,13 +442,16 @@
             margin-bottom: 6px;
         }
 
+
         .job h3 {
             font-size: 1rem;
             font-weight: 600;
         }
 
+
         .company-wrap {
             display: flex;
+
             align-items: center;
             justify-content: flex-end;
 
@@ -372,18 +460,22 @@
             white-space: nowrap;
         }
 
+
         .company {
             color: var(--accent);
 
             font-size: .83rem;
         }
 
+
         .company-logos {
             display: flex;
+
             align-items: center;
 
             gap: 7px;
         }
+
 
 
         /* =========================================================
@@ -392,27 +484,27 @@
 
         .company-logo-link {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
-            border-radius: 4px;
-
             text-decoration: none;
+
+            border-radius: 4px;
 
             transition:
                 opacity .15s ease,
                 transform .15s ease;
         }
 
+
         .company-logo-link:hover {
             opacity: .7;
-            transform: translateY(-1px);
+
+            transform:
+                translateY(-1px);
         }
 
-        .company-logo-link:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 3px;
-        }
 
         .company-logo {
             width: 25px;
@@ -423,10 +515,12 @@
             object-fit: contain;
         }
 
+
         .company-logo.audi {
             width: 39px;
             height: 23px;
         }
+
 
         .job p {
             max-width: 680px;
@@ -435,6 +529,7 @@
 
             font-size: .88rem;
         }
+
 
         .keywords {
             margin-top: 8px;
@@ -445,6 +540,7 @@
         }
 
 
+
         /* =========================================================
            SELECTED WORK
         ========================================================= */
@@ -453,22 +549,30 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+                repeat(
+                    2,
+                    minmax(0, 1fr)
+                );
 
             column-gap: 38px;
         }
 
-        .project {
-            padding: 18px 0 20px;
 
-            border-top: 1px solid var(--border);
+        .project {
+            padding:
+                18px 0 20px;
+
+            border-top:
+                1px solid var(--border);
         }
+
 
         .project:nth-child(-n+2) {
             padding-top: 0;
 
             border-top: none;
         }
+
 
         .project-meta {
             margin-bottom: 5px;
@@ -479,6 +583,7 @@
             font-weight: 550;
         }
 
+
         .project h3 {
             margin-bottom: 7px;
 
@@ -488,6 +593,7 @@
             line-height: 1.35;
         }
 
+
         .project p {
             color: var(--muted);
 
@@ -496,9 +602,6 @@
             line-height: 1.55;
         }
 
-        .project .keywords {
-            margin-top: 7px;
-        }
 
 
         /* =========================================================
@@ -508,18 +611,22 @@
         .two-columns {
             display: grid;
 
-            grid-template-columns: 1.3fr .7fr;
+            grid-template-columns:
+                1.3fr .7fr;
 
             gap: 55px;
         }
+
 
         .group {
             margin-bottom: 21px;
         }
 
+
         .group:last-child {
             margin-bottom: 0;
         }
+
 
         .group h3 {
             margin-bottom: 9px;
@@ -527,6 +634,7 @@
             font-size: .88rem;
             font-weight: 600;
         }
+
 
 
         /* =========================================================
@@ -540,6 +648,7 @@
             gap: 7px;
         }
 
+
         .tool {
             min-height: 38px;
 
@@ -550,10 +659,13 @@
 
             gap: 8px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 7px;
 
             background: var(--surface);
+
             color: var(--muted);
 
             font-size: .77rem;
@@ -567,47 +679,43 @@
         }
 
 
-        /*
-           Only linked tools get hover feedback.
-        */
-
         a.tool {
             cursor: pointer;
         }
 
+
         a.tool:hover {
-            border-color: var(--accent);
+            border-color:
+                var(--accent);
 
-            background: var(--icon-bg);
+            background:
+                var(--icon-bg);
 
-            transform: translateY(-1px);
+            transform:
+                translateY(-1px);
         }
 
-        a.tool:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
 
 
         /* =========================================================
-           ICON + TEXT LOGOS
-
-           Used where the source image does NOT already
-           contain the program name.
+           ICON + TEXT
         ========================================================= */
 
         .tool-icon {
             width: 26px;
             height: 26px;
 
-            flex: 0 0 26px;
+            flex:
+                0 0 26px;
 
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
             overflow: hidden;
         }
+
 
         .tool-icon img {
             width: 23px;
@@ -618,6 +726,13 @@
             object-fit: contain;
         }
 
+
+        .tool-icon.diagra img {
+            width: 25px;
+            height: 25px;
+        }
+
+
         .tool-icon svg {
             width: 19px;
             height: 19px;
@@ -626,26 +741,15 @@
             fill: none;
 
             stroke-width: 1.6;
+
             stroke-linecap: round;
             stroke-linejoin: round;
         }
 
 
-        /*
-           DiagRA logo benefits from slightly more space.
-        */
-
-        .tool-icon.diagra img {
-            width: 25px;
-            height: 25px;
-        }
-
 
         /* =========================================================
            WORDMARK LOGOS
-
-           No duplicate text is added because the
-           software name is already part of the image.
         ========================================================= */
 
         .tool.wordmark {
@@ -653,6 +757,7 @@
 
             gap: 0;
         }
+
 
         .wordmark-img {
             display: block;
@@ -665,29 +770,36 @@
             object-fit: contain;
         }
 
+
         .wordmark-img.arduino {
             max-width: 68px;
         }
+
 
         .wordmark-img.git {
             max-width: 59px;
         }
 
+
         .wordmark-img.ros {
             max-width: 66px;
         }
+
 
         .wordmark-img.kicad {
             max-width: 70px;
         }
 
+
         .wordmark-img.etas {
             max-width: 70px;
         }
 
+
         .wordmark-img.creo {
             max-width: 78px;
         }
+
 
         .wordmark-img.windchill {
             width: 94px;
@@ -697,15 +809,11 @@
         }
 
 
-        /*
-           ODIS contains substantially more artwork/text,
-           therefore it gets its own width.
-        */
-
         .tool.wordmark.odis {
             padding-left: 7px;
             padding-right: 7px;
         }
+
 
         .wordmark-img.odis {
             width: 108px;
@@ -717,6 +825,7 @@
         }
 
 
+
         /* =========================================================
            EDUCATION
         ========================================================= */
@@ -725,9 +834,11 @@
             margin-bottom: 22px;
         }
 
+
         .degree:last-child {
             margin-bottom: 0;
         }
+
 
         .degree-date {
             margin-bottom: 3px;
@@ -738,6 +849,7 @@
             font-weight: 550;
         }
 
+
         .degree h3 {
             margin-bottom: 3px;
 
@@ -745,17 +857,20 @@
             font-weight: 600;
         }
 
+
         .degree p {
             color: var(--muted);
 
             font-size: .82rem;
         }
 
+
         .grade {
             color: var(--text);
 
             font-weight: 550;
         }
+
 
 
         /* =========================================================
@@ -765,12 +880,14 @@
         footer {
             padding: 28px 0;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
 
             color: var(--muted);
 
             font-size: .76rem;
         }
+
 
 
         /* =========================================================
@@ -780,26 +897,35 @@
         @media (max-width: 700px) {
 
             .container {
-                width: calc(100% - 28px);
+                width:
+                    calc(100% - 28px);
             }
+
 
             header {
-                padding: 48px 0;
+                padding:
+                    48px 0;
             }
 
+
             .hero-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 gap: 26px;
             }
 
+
             .profile {
-                align-items: flex-start;
+                align-items:
+                    flex-start;
             }
+
 
             .portrait {
                 width: 115px;
             }
+
 
             .profile-caption {
                 width: 115px;
@@ -807,55 +933,73 @@
                 text-align: left;
             }
 
+
             section {
-                padding: 40px 0;
+                padding:
+                    40px 0;
             }
 
+
             .layout {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 gap: 24px;
             }
 
+
             .job {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 gap: 7px;
             }
+
 
             .job-top {
                 display: block;
             }
 
+
             .company-wrap {
-                justify-content: flex-start;
+                justify-content:
+                    flex-start;
 
                 margin-top: 4px;
                 margin-bottom: 5px;
             }
 
+
             .projects {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
+
 
             .project:nth-child(2) {
                 padding-top: 18px;
 
-                border-top: 1px solid var(--border);
+                border-top:
+                    1px solid var(--border);
             }
 
+
             .two-columns {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 gap: 40px;
             }
 
+
             .nav-text {
                 display: none;
             }
+
         }
 
     </style>
+
 </head>
 
 
@@ -870,7 +1014,10 @@
 
     <div class="container nav-inner">
 
-        <a href="#" class="brand">
+        <a
+            href="#"
+            class="brand"
+        >
             Deno Feuerriegel
         </a>
 
@@ -878,14 +1025,11 @@
         <div class="nav-actions">
 
 
-            <!-- LinkedIn -->
-
             <a
                 class="nav-button"
                 href="https://www.linkedin.com/in/deno-feuerriegel"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
                 title="LinkedIn"
             >
 
@@ -903,12 +1047,10 @@
             </a>
 
 
-            <!-- Mail -->
 
             <a
                 class="nav-button"
                 href="mailto:deno.feuerriegel@gmail.com"
-                aria-label="Email"
                 title="Email"
             >
 
@@ -918,6 +1060,7 @@
                     stroke="currentColor"
                     stroke-width="1.7"
                 >
+
                     <rect
                         x="3"
                         y="5"
@@ -926,7 +1069,10 @@
                         rx="2"
                     />
 
-                    <path d="M3 7l9 6 9-6"/>
+                    <path
+                        d="M3 7l9 6 9-6"
+                    />
+
                 </svg>
 
                 <span class="nav-text">
@@ -936,13 +1082,11 @@
             </a>
 
 
-            <!-- Theme -->
 
             <button
                 class="nav-button"
                 id="theme-toggle"
                 type="button"
-                aria-label="Toggle light and dark mode"
                 title="Toggle light / dark mode"
             >
                 ◐
@@ -972,10 +1116,12 @@
                 Mechanical Engineering · Systems Integration
             </div>
 
+
             <h1>
                 Systems Integration
                 & Mechatronic Development
             </h1>
+
 
             <p>
                 Mechanical engineer and M.Sc. candidate with experience
@@ -987,18 +1133,20 @@
         </div>
 
 
+
         <aside class="profile">
 
             <div class="portrait">
 
                 <img
-                    src="bild.jpg"
+                    src="assets/bild.jpg"
                     width="683"
                     height="1024"
                     alt="Deno Feuerriegel"
                 >
 
             </div>
+
 
             <div class="profile-caption">
                 Hamburg, Germany
@@ -1037,6 +1185,7 @@
                     05/2025 — Present
                 </div>
 
+
                 <div>
 
                     <div class="job-top">
@@ -1051,12 +1200,14 @@
 
                     </div>
 
+
                     <p>
                         Development of an unmanned system from concept
                         to functional prototype, integrating mechanics,
                         electronics, sensors, propulsion, communication
                         and autopilot software.
                     </p>
+
 
                     <div class="keywords">
                         System Integration · PCB Development ·
@@ -1076,6 +1227,7 @@
                 <div class="date">
                     03/2024 — 02/2025
                 </div>
+
 
                 <div>
 
@@ -1099,12 +1251,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title="Volkswagen"
-                                aria-label="Volkswagen website"
                             >
 
                                 <img
                                     class="company-logo"
-                                    src="volkswagen.svg"
+                                    src="assets/brands/volkswagen.svg"
                                     alt="Volkswagen"
                                 >
 
@@ -1115,12 +1266,14 @@
 
                     </div>
 
+
                     <p>
                         Vehicle software validation and calibration,
                         ECU and sensor signal analysis, HIL testing
                         and development of an automated software
                         commissioning workflow.
                     </p>
+
 
                     <div class="keywords">
                         HIL · ETAS · DiagRA · ODIS ·
@@ -1141,6 +1294,7 @@
                     11/2021 — 02/2024
                 </div>
 
+
                 <div>
 
                     <div class="job-top">
@@ -1155,11 +1309,13 @@
 
                     </div>
 
+
                     <p>
                         Real-world validation and evaluation of
                         driver assistance systems and identification
                         of functional anomalies.
                     </p>
+
 
                     <div class="keywords">
                         Vehicle Testing · ADAS · Validation
@@ -1178,6 +1334,7 @@
                 <div class="date">
                     08/2017 — 01/2021
                 </div>
+
 
                 <div>
 
@@ -1204,16 +1361,16 @@
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     title="Volkswagen"
-                                    aria-label="Volkswagen website"
                                 >
 
                                     <img
                                         class="company-logo"
-                                        src="volkswagen.svg"
+                                        src="assets/brands/volkswagen.svg"
                                         alt="Volkswagen"
                                     >
 
                                 </a>
+
 
 
                                 <a
@@ -1222,12 +1379,11 @@
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     title="Audi"
-                                    aria-label="Audi website"
                                 >
 
                                     <img
                                         class="company-logo audi"
-                                        src="audi.svg"
+                                        src="assets/brands/audi.svg"
                                         alt="Audi"
                                     >
 
@@ -1240,11 +1396,13 @@
 
                     </div>
 
+
                     <p>
                         Practical foundation in mechanical,
                         electrical and electronic vehicle systems,
                         diagnostics and troubleshooting.
                     </p>
+
 
                     <div class="keywords">
                         Diagnostics · ODIS · CAN / LIN · Vehicle E/E
@@ -1359,7 +1517,7 @@
 
 
 
-            <!-- Wind farm -->
+            <!-- Wind Farm -->
 
             <article class="project">
 
@@ -1374,7 +1532,7 @@
                 <p>
                     Analysis of operational and weather data and
                     development of forecasting models achieving
-                    R² > 0.85 for a 12.6 MW wind farm.
+                    R² &gt; 0.85 for a 12.6 MW wind farm.
                 </p>
 
                 <div class="keywords">
@@ -1455,7 +1613,7 @@
                 <div class="tool-list">
 
 
-                    <!-- Python: symbol + text -->
+                    <!-- Python -->
 
                     <a
                         class="tool"
@@ -1468,7 +1626,7 @@
                         <span class="tool-icon">
 
                             <img
-                                src="python.svg"
+                                src="assets/icons/python.svg"
                                 alt="Python logo"
                             >
 
@@ -1480,7 +1638,7 @@
 
 
 
-                    <!-- MATLAB: symbol + text -->
+                    <!-- MATLAB -->
 
                     <a
                         class="tool"
@@ -1493,7 +1651,7 @@
                         <span class="tool-icon">
 
                             <img
-                                src="matlab.png"
+                                src="assets/icons/matlab.png"
                                 alt="MATLAB logo"
                             >
 
@@ -1505,7 +1663,7 @@
 
 
 
-                    <!-- Git: image already includes its name -->
+                    <!-- Git -->
 
                     <a
                         class="tool wordmark"
@@ -1517,7 +1675,7 @@
 
                         <img
                             class="wordmark-img git"
-                            src="git.svg"
+                            src="assets/icons/git.svg"
                             alt="Git"
                         >
 
@@ -1529,12 +1687,14 @@
 
                     <div
                         class="tool"
-                        title="Structured Text / IEC 61131-3"
+                        title="Structured Text"
                     >
 
                         <span class="tool-icon">
 
-                            <svg viewBox="0 0 24 24">
+                            <svg
+                                viewBox="0 0 24 24"
+                            >
 
                                 <path d="M6 5h12"/>
                                 <path d="M9 5v14"/>
@@ -1569,7 +1729,7 @@
                 <div class="tool-list">
 
 
-                    <!-- Arduino wordmark -->
+                    <!-- Arduino -->
 
                     <a
                         class="tool wordmark"
@@ -1581,7 +1741,7 @@
 
                         <img
                             class="wordmark-img arduino"
-                            src="arduino.svg"
+                            src="assets/icons/arduino.svg"
                             alt="Arduino"
                         >
 
@@ -1589,19 +1749,19 @@
 
 
 
-                    <!-- ROS wordmark -->
+                    <!-- ROS -->
 
                     <a
                         class="tool wordmark"
                         href="https://www.ros.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Robot Operating System"
+                        title="ROS"
                     >
 
                         <img
                             class="wordmark-img ros"
-                            src="ros.svg"
+                            src="assets/icons/ros.svg"
                             alt="ROS"
                         >
 
@@ -1609,7 +1769,7 @@
 
 
 
-                    <!-- KiCad wordmark -->
+                    <!-- KiCad -->
 
                     <a
                         class="tool wordmark"
@@ -1621,7 +1781,7 @@
 
                         <img
                             class="wordmark-img kicad"
-                            src="kicad.svg"
+                            src="assets/icons/kicad.svg"
                             alt="KiCad"
                         >
 
@@ -1629,7 +1789,26 @@
 
 
 
-                    <!-- LTspice -->
+                    <a
+                        class="tool"
+                        href="https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="LTspice"
+                    >
+
+                        <span class="tool-icon">
+
+                            <img
+                                src="assets/icons/ltspice.png"
+                                alt="LTspice logo"
+                            >
+
+                        </span>
+
+                        LTspice
+
+                    </a>
 
                     <a
                         class="tool"
@@ -1644,7 +1823,10 @@
                             <svg viewBox="0 0 24 24">
 
                                 <path d="M3 12h4"/>
-                                <path d="M7 12c2-7 4 7 6 0s4 7 8 0"/>
+
+                                <path
+                                    d="M7 12c2-7 4 7 6 0s4 7 8 0"
+                                />
 
                             </svg>
 
@@ -1695,8 +1877,17 @@
                                 <path d="M8 10h3"/>
                                 <path d="M8 14h6"/>
 
-                                <circle cx="17" cy="11" r="1"/>
-                                <circle cx="17" cy="15" r="1"/>
+                                <circle
+                                    cx="17"
+                                    cy="11"
+                                    r="1"
+                                />
+
+                                <circle
+                                    cx="17"
+                                    cy="15"
+                                    r="1"
+                                />
 
                             </svg>
 
@@ -1708,7 +1899,7 @@
 
 
 
-                    <!-- ETAS wordmark -->
+                    <!-- ETAS -->
 
                     <a
                         class="tool wordmark"
@@ -1720,7 +1911,7 @@
 
                         <img
                             class="wordmark-img etas"
-                            src="etas.svg"
+                            src="assets/icons/etas.svg"
                             alt="ETAS"
                         >
 
@@ -1728,20 +1919,20 @@
 
 
 
-                    <!-- DiagRA symbol + text -->
+                    <!-- DiagRA -->
 
                     <a
                         class="tool"
                         href="https://www.rac.de/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="DiagRA D by RA Consulting"
+                        title="DiagRA D"
                     >
 
                         <span class="tool-icon diagra">
 
                             <img
-                                src="diagra_d.png"
+                                src="assets/icons/diagra_d.png"
                                 alt="DiagRA D logo"
                             >
 
@@ -1753,19 +1944,19 @@
 
 
 
-                    <!-- ODIS graphic already includes name -->
+                    <!-- ODIS -->
 
                     <a
                         class="tool wordmark odis"
                         href="https://erwin.vwgroup-datahub.com/odis-requirements"
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Volkswagen ODIS Service"
+                        title="ODIS"
                     >
 
                         <img
                             class="wordmark-img odis"
-                            src="odis.png"
+                            src="assets/icons/odis.png"
                             alt="ODIS"
                         >
 
@@ -1784,8 +1975,17 @@
 
                             <svg viewBox="0 0 24 24">
 
-                                <circle cx="5" cy="12" r="2"/>
-                                <circle cx="19" cy="12" r="2"/>
+                                <circle
+                                    cx="5"
+                                    cy="12"
+                                    r="2"
+                                />
+
+                                <circle
+                                    cx="19"
+                                    cy="12"
+                                    r="2"
+                                />
 
                                 <path d="M7 12h10"/>
                                 <path d="M9 8l3 4-3 4"/>
@@ -1812,8 +2012,17 @@
 
                             <svg viewBox="0 0 24 24">
 
-                                <circle cx="5" cy="12" r="2"/>
-                                <circle cx="19" cy="12" r="2"/>
+                                <circle
+                                    cx="5"
+                                    cy="12"
+                                    r="2"
+                                />
+
+                                <circle
+                                    cx="19"
+                                    cy="12"
+                                    r="2"
+                                />
 
                                 <path d="M7 12h10"/>
                                 <path d="M12 8v8"/>
@@ -1845,7 +2054,7 @@
                 <div class="tool-list">
 
 
-                    <!-- Creo wordmark -->
+                    <!-- Creo -->
 
                     <a
                         class="tool wordmark"
@@ -1857,7 +2066,7 @@
 
                         <img
                             class="wordmark-img creo"
-                            src="creo.svg"
+                            src="assets/icons/creo.svg"
                             alt="PTC Creo"
                         >
 
@@ -1865,7 +2074,7 @@
 
 
 
-                    <!-- Fusion: icon + text -->
+                    <!-- Fusion -->
 
                     <a
                         class="tool"
@@ -1878,7 +2087,7 @@
                         <span class="tool-icon">
 
                             <img
-                                src="fusion.svg"
+                                src="assets/icons/fusion.svg"
                                 alt="Autodesk Fusion logo"
                             >
 
@@ -1890,7 +2099,7 @@
 
 
 
-                    <!-- Windchill wordmark -->
+                    <!-- Windchill -->
 
                     <a
                         class="tool wordmark"
@@ -1902,7 +2111,7 @@
 
                         <img
                             class="wordmark-img windchill"
-                            src="windchill.png"
+                            src="assets/icons/windchill.png"
                             alt="PTC Windchill"
                         >
 
@@ -1925,8 +2134,11 @@
                             <svg viewBox="0 0 24 24">
 
                                 <path d="M4 18l4-12 5 10 3-7 4 9"/>
+
                                 <path d="M4 18h16"/>
+
                                 <path d="M8 6l5 10"/>
+
                                 <path d="M13 16l3-7"/>
 
                             </svg>
@@ -1968,10 +2180,12 @@
                     04/2025 — 12/2026
                 </div>
 
+
                 <h3>
                     M.Sc. Sustainable Energy Systems
                     in Mechanical Engineering
                 </h3>
+
 
                 <p>
                     HAW Hamburg
@@ -1994,12 +2208,15 @@
                     03/2021 — 03/2025
                 </div>
 
+
                 <h3>
                     B.Sc. Mechanical Engineering & Production
                 </h3>
 
+
                 <p>
-                    Digital Engineering & Mobility · HAW Hamburg
+                    Digital Engineering & Mobility
+                    · HAW Hamburg
                     <br>
 
                     <span class="grade">
@@ -2017,9 +2234,11 @@
                     08/2017 — 01/2021
                 </div>
 
+
                 <h3>
                     Automotive Mechatronics
                 </h3>
+
 
                 <p>
                     Vocational Training
@@ -2073,70 +2292,78 @@
         root.classList.add("light");
     }
 
+
     if (saved === "dark") {
         root.classList.add("dark");
     }
 
 
-    button.addEventListener("click", function () {
+    button.addEventListener(
+        "click",
+        function () {
 
-        const systemDark =
-            window.matchMedia(
-                "(prefers-color-scheme: dark)"
-            ).matches;
-
-
-        let currentlyDark;
-
-
-        if (root.classList.contains("dark")) {
-
-            currentlyDark = true;
-
-        }
-
-        else if (root.classList.contains("light")) {
-
-            currentlyDark = false;
-
-        }
-
-        else {
-
-            currentlyDark = systemDark;
-
-        }
+            const systemDark =
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
 
 
-        root.classList.remove(
-            "light",
-            "dark"
-        );
+            let currentlyDark;
 
 
-        if (currentlyDark) {
+            if (
+                root.classList.contains("dark")
+            ) {
 
-            root.classList.add("light");
+                currentlyDark = true;
 
-            localStorage.setItem(
-                "color-theme",
-                "light"
-            );
+            }
 
-        }
+            else if (
+                root.classList.contains("light")
+            ) {
 
-        else {
+                currentlyDark = false;
 
-            root.classList.add("dark");
+            }
 
-            localStorage.setItem(
-                "color-theme",
+            else {
+
+                currentlyDark = systemDark;
+
+            }
+
+
+            root.classList.remove(
+                "light",
                 "dark"
             );
 
-        }
 
-    });
+            if (currentlyDark) {
+
+                root.classList.add("light");
+
+                localStorage.setItem(
+                    "color-theme",
+                    "light"
+                );
+
+            }
+
+            else {
+
+                root.classList.add("dark");
+
+                localStorage.setItem(
+                    "color-theme",
+                    "dark"
+                );
+
+            }
+
+        }
+    );
 
 </script>
 
