@@ -11,6 +11,11 @@
     >
 
     <meta
+    name="format-detection"
+    content="telephone=no"
+    >
+
+    <meta
         name="description"
         content="Deno Feuerriegel – Mechanical Engineer focused on systems integration, vehicle software validation, HIL testing, embedded systems and mechatronic development."
     >
@@ -156,6 +161,12 @@
             color: inherit;
         }
 
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            pointer-events: none !important;
+            cursor: default !important;
+        }
 
         img {
             max-width: 100%;
@@ -550,6 +561,8 @@
             color: var(--muted);
 
             font-size: .78rem;
+
+            white-space: nowrap;
         }
 
 
