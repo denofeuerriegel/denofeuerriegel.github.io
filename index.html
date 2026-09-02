@@ -737,6 +737,12 @@
         }
 
 
+        .project-visual {
+            aspect-ratio: 4 / 3;
+            min-height: 0;
+        }
+
+
         .project-image {
             position: absolute;
             inset: 0;
@@ -745,6 +751,7 @@
             height: 100%;
 
             object-fit: cover;
+            object-position: center;
 
             transform: scale(1.001);
 
@@ -1887,7 +1894,17 @@
 
             <!-- HIL Bachelor Thesis -->
 
-            <article class="project">
+            <article class="project project-visual">
+
+                <img
+                    class="project-image"
+                    src="./assets/projects/bachelorarbeit.png"
+                    width="1448"
+                    height="1086"
+                    alt="Automotive HIL validation toolchain from Jira and Codebeamer through EXAM and HIL testing to traceability"
+                    loading="lazy"
+                    decoding="async"
+                >
 
                 <div class="project-content">
 
@@ -1906,8 +1923,8 @@
                     </p>
 
                     <div class="keywords">
-                        HIL · Test Automation · Validation ·
-                        Software Commissioning
+                        Jira · Codebeamer · EXAM · HIL ·
+                        Test Automation · Traceability
                     </div>
 
                 </div>
@@ -1954,6 +1971,8 @@
                 <img
                     class="project-image"
                     src="./assets/projects/autonome_robotik.png"
+                    width="1448"
+                    height="1086"
                     alt="Autonomous robotics project"
                     loading="lazy"
                     decoding="async"
@@ -2022,6 +2041,8 @@
                 <img
                     class="project-image"
                     src="./assets/projects/studienarbeit.png"
+                    width="1448"
+                    height="1086"
                     alt="Digital PID control laboratory project"
                     loading="lazy"
                     decoding="async"
@@ -2060,6 +2081,8 @@
                 <img
                     class="project-image"
                     src="./assets/projects/masterprojekt.png"
+                    width="1448"
+                    height="1086"
                     alt="Wind farm power curve and forecasting project"
                     loading="lazy"
                     decoding="async"
@@ -2974,7 +2997,12 @@
      Optional: add a privacy-friendly analytics beacon here once
      configured (for example Cloudflare Web Analytics or GoatCounter).
 ========================================================= -->
-
+<!-- Cloudflare Web Analytics -->
+ <script 
+    type='module' 
+    src='https://static.cloudflareinsights.com/beacon.min.js' 
+    data-cf-beacon='{"token": "c5dbd95d32064273a335e95b02a4a111"}'>
+ </script><!-- End Cloudflare Web Analytics -->
 
 <!-- =========================================================
      THEME SWITCH
