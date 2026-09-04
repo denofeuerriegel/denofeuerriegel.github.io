@@ -782,14 +782,27 @@
 
             transform: scale(1.001);
 
-            transition: transform .35s ease;
+            transition:
+                transform .35s ease,
+                filter .35s ease;
         }
 
 
         .project-visual:hover .project-image {
             transform: scale(1.035);
+
+            filter:
+                brightness(1.08)
+                saturate(1.04);
         }
 
+        .project-visual h3,
+        .project-visual p,
+        .project-visual .keywords,
+        .project-visual .project-meta {
+            text-shadow:
+                0 1px 3px rgba(0, 0, 0, .35);
+        }
 
         .project-visual::after {
             content: "";
@@ -806,6 +819,16 @@
                 );
 
             z-index: 1;
+
+            opacity: 1;
+
+            transition:
+                opacity .3s ease;
+        }
+
+
+        .project-visual:hover::after {
+            opacity: .62;
         }
 
 
