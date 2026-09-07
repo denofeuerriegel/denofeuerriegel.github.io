@@ -82,6 +82,8 @@
 
             --tool-bg: #ffffff;
             --tool-hover: #eef0ec;
+            --tool-border: #dadcd8;
+            --logo-bg: transparent;
         }
 
 
@@ -99,9 +101,11 @@
                 --accent: #9eb5a6;
                 --icon-bg: #292d2a;
 
-                --tool-bg: #414744;
-                --tool-hover: #4b524e;
-                --tool-border: #505752;
+                --tool-bg: #4a504d;
+                --tool-hover: #565d59;
+                --tool-border: #606862;
+
+                --logo-bg: rgba(255, 255, 255, .16);
             }
 
         }
@@ -133,9 +137,11 @@
             --accent: #9eb5a6;
             --icon-bg: #292d2a;
 
-            ---tool-bg: #414744;
-            --tool-hover: #4b524e;
-            --tool-border: #505752; 
+            --tool-bg: #4a504d;
+            --tool-hover: #565d59;
+            --tool-border: #606862;
+
+            --logo-bg: rgba(255, 255, 255, .16);
         }
 
 
@@ -1145,6 +1151,19 @@
             object-fit: contain;
         }
 
+        .wordmark-img.git,
+        .wordmark-img.ros,
+        .wordmark-img.kicad,
+        .wordmark-img.odis,
+        .wordmark-img.creo,
+        .wordmark-img.windchill,
+        .wordmark-img.codebeamer {
+            background: var(--logo-bg);
+
+            border-radius: 5px;
+
+            padding: 4px 6px;
+        }
 
 
         /* ODIS fallback */
