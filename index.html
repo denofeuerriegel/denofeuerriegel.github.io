@@ -79,6 +79,9 @@
 
             --accent: #557462;
             --icon-bg: #eef0ec;
+
+            --tool-bg: #ffffff;
+            --tool-hover: #eef0ec;
         }
 
 
@@ -95,6 +98,9 @@
 
                 --accent: #9eb5a6;
                 --icon-bg: #292d2a;
+
+                --tool-bg: #343936;
+                --tool-hover: #3d443f;
             }
 
         }
@@ -125,6 +131,9 @@
 
             --accent: #9eb5a6;
             --icon-bg: #292d2a;
+
+            --tool-bg: #343936;
+            --tool-hover: #3d443f;
         }
 
 
@@ -947,7 +956,7 @@
 
             border-radius: 7px;
 
-            background: var(--surface);
+            background: var(--tool-bg);
             color: var(--muted);
 
             font-size: .77rem;
@@ -969,7 +978,7 @@
         a.tool:hover {
             border-color: var(--accent);
 
-            background: var(--icon-bg);
+            background: var(--tool-hover);
 
             transform:
                 translateY(-1px);
