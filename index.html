@@ -99,8 +99,9 @@
                 --accent: #9eb5a6;
                 --icon-bg: #292d2a;
 
-                --tool-bg: #343936;
-                --tool-hover: #3d443f;
+                --tool-bg: #414744;
+                --tool-hover: #4b524e;
+                --tool-border: #505752;
             }
 
         }
@@ -132,8 +133,9 @@
             --accent: #9eb5a6;
             --icon-bg: #292d2a;
 
-            --tool-bg: #343936;
-            --tool-hover: #3d443f;
+            ---tool-bg: #414744;
+            --tool-hover: #4b524e;
+            --tool-border: #505752; 
         }
 
 
@@ -952,11 +954,11 @@
             gap: 8px;
 
             border:
-                1px solid var(--border);
+                1px solid var(--tool-border, var(--border));
 
             border-radius: 7px;
 
-            background: var(--tool-bg);
+            background: var(--tool-bg, var(--surface));
             color: var(--muted);
 
             font-size: .77rem;
@@ -978,7 +980,7 @@
         a.tool:hover {
             border-color: var(--accent);
 
-            background: var(--tool-hover);
+            background: var(--tool-hover, var(--icon-bg));
 
             transform:
                 translateY(-1px);
