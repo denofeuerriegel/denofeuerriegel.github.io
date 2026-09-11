@@ -1279,23 +1279,71 @@
 
 
             .hero-grid {
-                display: block;
-                position: relative;
+                display: grid;
+
+                grid-template-columns:
+                    minmax(0, 1fr)
+                    92px;
+
+                column-gap: 16px;
+                row-gap: 0;
+
+                align-items: start;
             }
 
 
+            /*
+                Dadurch werden die Inhalte von .hero-copy
+                direkt Teil des Hero-Grids.
+            */
             .hero-copy {
-                max-width: none;
+                display: contents;
             }
 
+
+            /* Grünes Label über die volle Breite */
+
+            .label {
+                grid-column: 1 / -1;
+                grid-row: 1;
+
+                padding-right: 0;
+                margin-bottom: 14px;
+            }
+
+
+            /* Schwarze Überschrift links */
+
+            h1 {
+                grid-column: 1;
+                grid-row: 2;
+
+                padding-right: 0;
+
+                margin-bottom: 20px;
+
+                font-size:
+                    clamp(
+                        2.1rem,
+                        9.5vw,
+                        3rem
+                    );
+            }
+
+
+            /* Foto direkt neben der schwarzen Überschrift */
 
             .profile {
-                position: absolute;
+                grid-column: 2;
+                grid-row: 2;
 
-                top: 4px;
-                right: 0;
+                position: static;
 
                 display: block;
+
+                align-self: start;
+
+                margin-top: 4px;
             }
 
 
@@ -1306,22 +1354,29 @@
             }
 
 
-            /* Platz für das Portrait nur im oberen Hero-Bereich */
+            /* Beschreibung wieder volle Breite */
 
-            .label {
-                padding-right: 105px;
+            .hero-copy > p {
+                grid-column: 1 / -1;
+                grid-row: 3;
+
+                margin-top: 0;
             }
 
 
-            h1 {
-                padding-right: 105px;
+            /* Meta-Informationen volle Breite */
 
-                font-size:
-                    clamp(
-                        2.15rem,
-                        10vw,
-                        3rem
-                    );
+            .hero-meta {
+                grid-column: 1 / -1;
+                grid-row: 4;
+            }
+
+
+            /* Focus-Zeile ebenfalls volle Breite */
+
+            .focus-line {
+                grid-column: 1 / -1;
+                grid-row: 5;
             }
 
 
