@@ -479,10 +479,9 @@
 
 
         .portrait {
-            width: 158px;
+            width: 170px;
 
-            aspect-ratio:
-                683 / 1024;
+            aspect-ratio: 1122 / 1402;
 
             overflow: hidden;
 
@@ -502,9 +501,9 @@
             display: block;
 
             object-fit: cover;
+            object-position: center center;
 
-            object-position:
-                center center;
+            image-rendering: auto;
         }
 
 
@@ -1280,28 +1279,49 @@
 
 
             .hero-grid {
-                grid-template-columns:
-                    1fr;
+                display: block;
+                position: relative;
+            }
 
-                gap: 28px;
+
+            .hero-copy {
+                max-width: none;
             }
 
 
             .profile {
-                align-items:
-                    flex-start;
+                position: absolute;
+
+                top: 4px;
+                right: 0;
+
+                display: block;
             }
 
 
             .portrait {
-                width: 125px;
+                width: 92px;
+
+                border-radius: 8px;
             }
 
 
-            .profile-caption {
-                width: 125px;
+            /* Platz für das Portrait nur im oberen Hero-Bereich */
 
-                text-align: left;
+            .label {
+                padding-right: 105px;
+            }
+
+
+            h1 {
+                padding-right: 105px;
+
+                font-size:
+                    clamp(
+                        2.15rem,
+                        10vw,
+                        3rem
+                    );
             }
 
 
@@ -1589,9 +1609,9 @@
             <div class="portrait">
 
                 <img
-                    src="./assets/bild.png"
-                    width="683"
-                    height="1024"
+                    src="./assets/bild.png?v=2"
+                    width="1122"
+                    height="1402"
                     alt="Deno Feuerriegel"
                     decoding="async"
                 >
