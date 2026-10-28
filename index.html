@@ -7,13 +7,13 @@
 
     <title>Deno Feuerriegel | Systems Engineering, Sensorintegration & Mechatronik</title>
 
-    <meta name="description" content="Deno Feuerriegel – Maschinenbauingenieur mit Fokus auf Systems Engineering, Sensorintegration und Mechatronik. Erfahrung in HIL-Validierung, Embedded-Entwicklung und Fahrzeugtechnik. Verfügbar ab Januar 2027 in Hamburg.">
+    <meta name="description" content="Deno Feuerriegel, Maschinenbauingenieur mit Fokus auf Systems Engineering, Sensorintegration und Mechatronik. Erfahrung in HIL-Validierung, Embedded-Entwicklung und Fahrzeugtechnik. Verfügbar ab Januar 2027 in Hamburg.">
 
     <!-- Social preview (LinkedIn, WhatsApp, Mail) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denofeuerriegel.github.io/">
     <meta property="og:title" content="Deno Feuerriegel | Systems Engineering, Sensorintegration & Mechatronik">
-    <meta property="og:description" content="Maschinenbauingenieur (M.Sc., HAW Hamburg) – Sensorintegration, Systems Engineering und Mechatronik. Verfügbar ab Januar 2027.">
+    <meta property="og:description" content="Maschinenbauingenieur (M.Sc., HAW Hamburg) mit Fokus auf Sensorintegration, Systems Engineering und Mechatronik. Verfügbar ab Januar 2027.">
     <meta property="og:image" content="https://denofeuerriegel.github.io/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -232,7 +232,7 @@
         /* =========================================================
            HERO
         ========================================================= */
-        header { padding: 64px 0 40px; }
+        header { padding: 64px 0 60px; }
 
         .hero {
             display: grid;
@@ -264,15 +264,17 @@
         }
 
         h1 {
-            max-width: 760px;
+            max-width: 100%;
             margin-bottom: 20px;
-            font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+            font-size: clamp(2.1rem, 3.9vw, 3.1rem);
             font-weight: 600;
             line-height: 1.06;
             letter-spacing: -.035em;
             text-wrap: balance;
         }
         h1 .accent { color: var(--accent); }
+        h1 .h1-line { display: block; }
+        @media (min-width: 1000px) { h1 .h1-line { white-space: nowrap; } }
 
         .hero-lead {
             max-width: 640px;
@@ -803,6 +805,7 @@
             }
             .hero-role { font-size: .84rem; line-height: 1.4; }
             h1 { font-size: clamp(2rem, 8.6vw, 2.6rem); margin-bottom: 16px; }
+            h1 .h1-line { display: inline; }
             .hero-lead { font-size: 1.02rem; }
             .hero-actions { margin-top: 22px; }
             .badge-available { width: 100%; justify-content: center; margin-right: 0; }
@@ -882,16 +885,16 @@
             </div>
 
             <h1>
-                <span lang="de">Systems Engineering, <span class="accent">Sensor&shy;integration</span> &amp; Mechatronik</span>
-                <span lang="en">Systems Engineering, <span class="accent">Sensor Integration</span> &amp; Mechatronics</span>
+                <span lang="de"><span class="h1-line">Systems Engineering,</span> <span class="h1-line"><span class="accent">Sensorintegration</span> &amp; Mechatronik</span></span>
+                <span lang="en"><span class="h1-line">Systems Engineering,</span> <span class="h1-line"><span class="accent">Sensor Integration</span> &amp; Mechatronics</span></span>
             </h1>
 
             <p class="hero-lead" lang="de">
-                Ich bringe Mechanik, Elektronik, Sensorik und Software zu funktionierenden Systemen zusammen –
+                Ich bringe Mechanik, Elektronik, Sensorik und Software zu funktionierenden Systemen zusammen:
                 vom Konzept über Integration und Inbetriebnahme bis zur Validierung am Prüfstand und im Fahrzeug.
             </p>
             <p class="hero-lead" lang="en">
-                I bring mechanics, electronics, sensors and software together into working systems –
+                I bring mechanics, electronics, sensors and software together into working systems:
                 from concept through integration and bring-up to validation on the test bench and in the vehicle.
             </p>
 
@@ -928,24 +931,6 @@
 
         </div>
 
-        <!-- Kennzahlen -->
-        <div class="facts">
-            <div class="fact">
-                <span class="fact-value"><span lang="de">3,5 Jahre</span><span lang="en">3.5 yrs</span></span>
-                <span class="fact-label" lang="de">Ausbildung Kfz-Mechatroniker im VW-Konzernumfeld</span>
-                <span class="fact-label" lang="en">Automotive mechatronics apprenticeship (VW Group brands)</span>
-            </div>
-            <div class="fact">
-                <span class="fact-value"><span lang="de">1 Jahr</span><span lang="en">1 yr</span></span>
-                <span class="fact-label" lang="de">Volkswagen AG · Antriebs&shy;software &amp; HIL-Validierung</span>
-                <span class="fact-label" lang="en">Volkswagen AG · Powertrain software &amp; HIL validation</span>
-            </div>
-            <div class="fact">
-                <span class="fact-value"><span lang="de">1,5</span><span lang="en">1.5</span></span>
-                <span class="fact-label" lang="de">Abschlussnote B.Sc. · M.Sc. aktuell 1,55</span>
-                <span class="fact-label" lang="en">B.Sc. final grade · M.Sc. currently 1.55 (German scale, 1.0 = best)</span>
-            </div>
-        </div>
     </div>
 </header>
 
@@ -963,13 +948,13 @@
             <!-- Projassment -->
             <article class="job">
                 <div class="date num">
-                    05/2025 – <span lang="de">heute</span><span lang="en">present</span>
+                    05/2025 - <span lang="de">heute</span><span lang="en">present</span>
                 </div>
                 <div>
                     <div class="job-head">
                         <div>
-                            <h3 lang="de">Produktentwicklung – unbemanntes Wasserfahrzeug (USV)</h3>
-                            <h3 lang="en">Product Development – Unmanned Surface Vehicle (USV)</h3>
+                            <h3 lang="de">Produktentwicklung eines unbemannten Wasserfahrzeugs (USV)</h3>
+                            <h3 lang="en">Product Development of an Unmanned Surface Vehicle (USV)</h3>
                             <div class="job-org">
                                 <a class="company" href="https://www.projassment.de/" target="_blank" rel="noopener noreferrer">Projassment e.K.</a>
                                 <span class="type" lang="de">Werkstudent</span>
@@ -1006,12 +991,12 @@
 
             <!-- Volkswagen -->
             <article class="job">
-                <div class="date num">03/2024 – 02/2025</div>
+                <div class="date num">03/2024 - 02/2025</div>
                 <div>
                     <div class="job-head">
                         <div>
-                            <h3 lang="de">Entwicklung Antriebssoftware – Validierung &amp; HIL</h3>
-                            <h3 lang="en">Powertrain Software Development – Validation &amp; HIL</h3>
+                            <h3 lang="de">Validierung von Antriebssoftware am HIL</h3>
+                            <h3 lang="en">Powertrain Software Validation &amp; HIL</h3>
                             <div class="job-org">
                                 <span class="company">Volkswagen AG</span>
                                 <span class="type" lang="de">Praktikum, anschl. Bachelorarbeit</span>
@@ -1032,8 +1017,8 @@
                         <li lang="de">Analyse von Steuergeräte- und Sensorsignalen, Parameterständen und Softwareverhalten mit ETAS INCA/MDA, DiagRA und ODIS</li>
                         <li lang="en">Analysis of ECU and sensor signals, parameter states and software behaviour using ETAS INCA/MDA, DiagRA and ODIS</li>
 
-                        <li lang="de">Bachelorarbeit: automatisierter Workflow für Software-Inbetriebnahme, Test und rückverfolgbare Verifikation – <strong>über 100 Testfälle automatisiert abarbeitbar</strong>, je nach Testplan erweiterbar</li>
-                        <li lang="en">B.Sc. thesis: automated workflow for software commissioning, testing and traceable verification – <strong>100+ test cases executed automatically</strong>, extendable per test plan</li>
+                        <li lang="de">Bachelorarbeit: automatisierter Workflow für Software-Inbetriebnahme, Test und rückverfolgbare Verifikation; <strong>über 200 Testfälle automatisiert abarbeitbar</strong>, je nach Testplan erweiterbar</li>
+                        <li lang="en">B.Sc. thesis: automated workflow for software commissioning, testing and traceable verification; <strong>200+ test cases executed automatically</strong>, extendable per test plan</li>
 
                         <li lang="de">Internes Austauschformat für Praktikanten in der VW-Entwicklung initiiert und organisiert</li>
                         <li lang="en">Initiated and organised an internal exchange format for interns across Volkswagen R&amp;D</li>
@@ -1050,12 +1035,12 @@
 
             <!-- CoTec -->
             <article class="job">
-                <div class="date num">11/2021 – 02/2024</div>
+                <div class="date num">11/2021 - 02/2024</div>
                 <div>
                     <div class="job-head">
                         <div>
-                            <h3 lang="de">Fahrzeugerprobung – Validierung von Fahrerassistenzsystemen</h3>
-                            <h3 lang="en">Vehicle Testing – ADAS Validation</h3>
+                            <h3 lang="de">Fahrzeugerprobung und Validierung von Fahrerassistenzsystemen</h3>
+                            <h3 lang="en">Vehicle Testing and ADAS Validation</h3>
                             <div class="job-org">
                                 <span class="company">CoTec GmbH</span>
                                 <span class="type" lang="de">Werkstudent</span>
@@ -1083,7 +1068,7 @@
 
             <!-- Kuhn + Witte -->
             <article class="job">
-                <div class="date num">08/2017 – 01/2021</div>
+                <div class="date num">08/2017 - 01/2021</div>
                 <div>
                     <div class="job-head">
                         <div>
@@ -1141,7 +1126,7 @@
             <!-- USV -->
             <article class="project">
                 <div class="project-media">
-                    <img src="./assets/projects/usv.webp" width="1200" height="900" alt="Unbemanntes Wasserfahrzeug mit eigener Elektronik und Platine" loading="lazy" decoding="async">
+                    <img src="./assets/projects/usv.webp?v=2" width="1200" height="900" alt="Unbemanntes Wasserfahrzeug mit eigener Elektronik und Platine" loading="lazy" decoding="async">
                 </div>
                 <div class="project-body">
                     <div class="project-meta"><span lang="de">Produktentwicklung · laufend</span><span lang="en">Product Development · ongoing</span></div>
@@ -1172,12 +1157,12 @@
                     <div class="project-meta"><span lang="de">Bachelorarbeit · Volkswagen AG</span><span lang="en">B.Sc. Thesis · Volkswagen AG</span></div>
                     <h3 lang="de">Automatisierte Software-Inbetriebnahme am HIL</h3>
                     <h3 lang="en">Automated HIL Software Commissioning</h3>
-                    <p lang="de">End-to-End-Toolchain für die automatisierte Inbetriebnahme und Validierung von Antriebssoftware am Hardware-in-the-Loop-Prüfstand – von der Anforderung bis zum rückverfolgbaren Testergebnis.</p>
-                    <p lang="en">End-to-end toolchain for automated commissioning and validation of powertrain software on a Hardware-in-the-Loop test bench – from requirement to traceable test result.</p>
+                    <p lang="de">End-to-End-Toolchain für die automatisierte Inbetriebnahme und Validierung von Antriebssoftware am Hardware-in-the-Loop-Prüfstand, von der Anforderung bis zum rückverfolgbaren Testergebnis.</p>
+                    <p lang="en">End-to-end toolchain for automated commissioning and validation of powertrain software on a Hardware-in-the-Loop test bench, from requirement to traceable test result.</p>
                     <div class="result">
                         <b lang="de">Ergebnis</b><b lang="en">Result</b>
-                        <span lang="de">Über 100 Testfälle automatisiert abarbeitbar, je nach Testplan erweiterbar</span>
-                        <span lang="en">100+ test cases executed automatically, extendable per test plan</span>
+                        <span lang="de">Über 200 Testfälle automatisiert abarbeitbar, je nach Testplan erweiterbar</span>
+                        <span lang="en">200+ test cases executed automatically, extendable per test plan</span>
                     </div>
                     <div class="tags">
                         <span>Jira</span><span>Codebeamer</span><span>EXAM</span><span>HIL</span>
@@ -1189,14 +1174,19 @@
             <!-- SLAM -->
             <article class="project">
                 <div class="project-media">
-                    <img src="./assets/projects/autonome_robotik.webp" width="1200" height="900" alt="Mobiler Roboter mit LiDAR für SLAM und Navigation" loading="lazy" decoding="async">
+                    <img src="./assets/projects/autonome_robotik.webp" width="1200" height="900" alt="Mobiler Roboter mit LiDAR für SLAM" loading="lazy" decoding="async">
                 </div>
                 <div class="project-body">
                     <div class="project-meta"><span lang="de">B.Sc.-Projekt · Autonome Robotik</span><span lang="en">B.Sc. Project · Autonomous Robotics</span></div>
-                    <h3 lang="de">ROS-basiertes SLAM &amp; Navigation</h3>
-                    <h3 lang="en">ROS-Based SLAM &amp; Navigation</h3>
-                    <p lang="de">Integration und Konfiguration eines SLAM-Systems für einen Mecanum-Roboter mit LiDAR, ROS und hector_slam – inklusive Navigation, Pfadplanung und Hindernisvermeidung.</p>
-                    <p lang="en">Integration and configuration of a SLAM system for a Mecanum-wheel robot using LiDAR, ROS and hector_slam – including navigation, path planning and obstacle avoidance.</p>
+                    <h3 lang="de">ROS-basiertes SLAM für einen mobilen Roboter</h3>
+                    <h3 lang="en">ROS-Based SLAM for a Mobile Robot</h3>
+                    <p lang="de">Integration und Konfiguration eines SLAM-Systems mit LiDAR, ROS und hector_slam, mit dem sich ein Mecanum-Roboter in seiner Umgebung kartieren und lokalisieren konnte.</p>
+                    <p lang="en">Integration and configuration of a SLAM system using LiDAR, ROS and hector_slam, enabling a Mecanum-wheel robot to map its environment and localise itself.</p>
+                    <div class="result">
+                        <b lang="de">Ergebnis</b><b lang="en">Result</b>
+                        <span lang="de">Funktionsfähige Kartierung und Lokalisierung des Roboters in einer Testumgebung</span>
+                        <span lang="en">Working mapping and localisation of the robot in a test environment</span>
+                    </div>
                     <div class="tags">
                         <span>ROS</span><span>SLAM</span><span>LiDAR</span>
                         <span lang="de">Sensorintegration</span><span lang="en">Sensor Integration</span>
@@ -1259,8 +1249,8 @@
                     <p lang="en">Analysis of operational and weather data and development of forecasting models for a 12.6 MW wind farm.</p>
                     <div class="result">
                         <b lang="de">Ergebnis</b><b lang="en">Result</b>
-                        <span lang="de">Prognosemodelle mit R² &gt; 0,85</span>
-                        <span lang="en">Forecasting models with R² &gt; 0.85</span>
+                        <span lang="de">Prognosemodelle mit R² &gt; 0,85 und MAE ca. 500 kW</span>
+                        <span lang="en">Forecasting models with R² &gt; 0.85 and MAE approx. 500 kW</span>
                     </div>
                     <div class="tags">
                         <span>MATLAB</span>
@@ -1361,7 +1351,7 @@
         <div>
             <div class="edu">
                 <div class="degree">
-                    <div class="degree-date">04/2025 – 12/2026</div>
+                    <div class="degree-date">04/2025 - 12/2026</div>
                     <h3 lang="de">M.Sc. Nachhaltige Energiesysteme im Maschinenbau</h3>
                     <h3 lang="en">M.Sc. Sustainable Energy Systems in Mechanical Engineering</h3>
                     <p lang="de">HAW Hamburg · Abschluss voraussichtlich 12/2026</p>
@@ -1370,7 +1360,7 @@
                 </div>
 
                 <div class="degree">
-                    <div class="degree-date">03/2021 – 03/2025</div>
+                    <div class="degree-date">03/2021 - 03/2025</div>
                     <h3 lang="de">B.Sc. Maschinenbau &amp; Produktion</h3>
                     <h3 lang="en">B.Sc. Mechanical Engineering &amp; Production</h3>
                     <p lang="de">Vertiefung Digital Engineering &amp; Mobility · HAW Hamburg</p>
@@ -1379,7 +1369,7 @@
                 </div>
 
                 <div class="degree">
-                    <div class="degree-date">08/2017 – 01/2021</div>
+                    <div class="degree-date">08/2017 - 01/2021</div>
                     <h3 lang="de">Ausbildung Kfz-Mechatroniker</h3>
                     <h3 lang="en">Apprenticeship Automotive Mechatronics</h3>
                     <p>Kuhn + Witte GmbH &amp; Co. KG</p>
