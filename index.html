@@ -766,6 +766,8 @@
             color: var(--muted);
             font-size: .8rem;
         }
+        .footer-link { color: inherit; text-underline-offset: 3px; }
+        .footer-link:hover { color: var(--accent); }
         .footer-inner {
             display: flex;
             flex-wrap: wrap;
@@ -1415,15 +1417,13 @@
 
 <footer>
     <div class="container footer-inner">
-        <span>© 2026 Deno Feuerriegel · Hamburg</span>
+        <span>© 2026 Deno Feuerriegel · Hamburg · <a class="footer-link" href="./datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a></span>
         <span lang="de">Systems Engineering · Sensorintegration · Mechatronik</span>
         <span lang="en">Systems Engineering · Sensor Integration · Mechatronics</span>
     </div>
 </footer>
 
 
-<!-- Cloudflare Web Analytics -->
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c5dbd95d32064273a335e95b02a4a111"}'></script>
 
 <!-- =========================================================
      SPRACHE + THEME
